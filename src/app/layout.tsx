@@ -15,6 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://resource-hub-rosy.vercel.app'),
   title: {
     default: "AI in Supply Chain Resource Hub",
     template: "%s | AI in Supply Chain Resource Hub",

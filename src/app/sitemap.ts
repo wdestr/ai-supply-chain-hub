@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getAllArticles } from '@/data/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ai-supply-chain-hub.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://resource-hub-rosy.vercel.app';
   const articles = getAllArticles();
 
   const staticPages = [
