@@ -1,0 +1,719 @@
+{
+  "metadata": {
+    "title": "Individual & Personal AI Projects for Supply Chain Professionals",
+    "description": "Real examples of AI projects built by individuals, small teams, hobbyists, open-source contributors, and students — not enterprise companies. Curated to inspire supply chain professionals.",
+    "version": "1.0",
+    "last_updated": "2026-02-28",
+    "total_type1_projects": 35,
+    "total_type2_projects": 22,
+    "research_sources": "GitHub, Kaggle, Medium, Towards Data Science, YouTube, n8n, academic repositories, personal blogs"
+  },
+
+  "type1_supply_chain_ai_projects": [
+    {
+      "id": "sc-01",
+      "project_name": "Supply Chain Optimization with Python",
+      "creator": "Samir Saci (@samirsaci)",
+      "description": "Comprehensive collection of 100+ supply chain analytics case studies covering optimization, forecasting, warehouse operations, sustainability, and AI agents. Samir is a supply chain engineer who built an entire portfolio of open-source Python tools and tutorials for SC professionals.",
+      "what_they_built": "Linear programming models for facility location, transportation optimization, warehouse picking path algorithms using Google AI, Monte Carlo network simulation, Streamlit apps for ABC analysis, CO2 emissions reporting with PowerBI, and AI-powered control towers with LangChain and GPT-4o.",
+      "tools_used": ["Python", "PuLP", "Pandas", "Streamlit", "LangChain", "GPT-4o", "n8n", "PowerBI", "Google OR-Tools", "SciPy"],
+      "link": "https://github.com/samirsaci",
+      "secondary_links": ["https://www.samirsaci.com/", "https://samirsaci.github.io/"],
+      "category": "open-source-tool",
+      "why_inspiring": "One individual created the most comprehensive open-source SC analytics portfolio on the internet, proving that a single supply chain engineer can build production-quality tools."
+    },
+    {
+      "id": "sc-02",
+      "project_name": "SupplyChain-AI RAG Chatbot",
+      "creator": "Vaishnavi Thakre (@VaishnaviThakre)",
+      "description": "An AI-powered generative chatbot that uses LLMs, RAG architecture, and predictive analytics to answer conversational queries about supply chain management.",
+      "what_they_built": "A chatbot that combines retrieval-augmented generation with predictive analytics for real-time supply chain decision support, scalable from small businesses to large enterprises.",
+      "tools_used": ["Python", "LLMs", "RAG Architecture", "Predictive Analytics"],
+      "link": "https://github.com/VaishnaviThakre/SupplyChain-AI",
+      "category": "automation",
+      "why_inspiring": "Shows how an individual developer can combine LLMs with SC domain knowledge to build a practical decision-support chatbot."
+    },
+    {
+      "id": "sc-03",
+      "project_name": "Supply Chain Analytics & Demand Forecasting",
+      "creator": "Emirhan Silsupur (@emirhansilsupur)",
+      "description": "Project focused on demand forecasting using advanced analytics to predict weekly sales units for various store-SKU combinations, helping with inventory management and promotional planning.",
+      "what_they_built": "A two-part analytics system: supply chain analytics dashboard and demand forecasting models for predicting weekly sales by store-SKU combination.",
+      "tools_used": ["Python", "Pandas", "scikit-learn", "Jupyter Notebooks"],
+      "link": "https://github.com/emirhansilsupur/supply-chain-analytics-forecasting",
+      "category": "demand-forecasting",
+      "why_inspiring": "Clean, well-structured project that any SC professional could replicate to start forecasting their own data."
+    },
+    {
+      "id": "sc-04",
+      "project_name": "Responsive AI Clusters in Supply Chain",
+      "creator": "Appointat",
+      "description": "AI multi-agent system where each supermarket outlet is an independent agent and the central warehouse is a special agent with global information, creating adaptive supply chain coordination.",
+      "what_they_built": "A multi-agent supply chain coordination system with separate AI backends for each supermarket and warehouse, enabling real-time adaptive decision-making.",
+      "tools_used": ["Python", "Go", "AI Multi-Agent Framework"],
+      "link": "https://github.com/Appointat/Responsive-AI-Clusters-in-Supply-Chain",
+      "category": "automation",
+      "why_inspiring": "Demonstrates cutting-edge multi-agent AI architecture applied to a practical retail supply chain problem."
+    },
+    {
+      "id": "sc-05",
+      "project_name": "Supply Chain ML Optimization Suite",
+      "creator": "Ankit Raj (@ankitrajsh)",
+      "description": "Repository applying ML to optimize supply chain management covering demand forecasting, inventory, logistics, and supplier selection with real-world datasets.",
+      "what_they_built": "Collection of Jupyter notebooks and Python scripts covering four core SC areas: demand forecasting, inventory optimization, logistics routing, and supplier selection using ML.",
+      "tools_used": ["Python", "scikit-learn", "Pandas", "Jupyter Notebooks"],
+      "link": "https://github.com/ankitrajsh/Supply-Chain-Optimization",
+      "category": "open-source-tool",
+      "why_inspiring": "Comprehensive ML toolkit that covers the four pillars of supply chain optimization in one repository."
+    },
+    {
+      "id": "sc-06",
+      "project_name": "supplychainpy",
+      "creator": "Kevin Fasusi (@KevinFasusi)",
+      "description": "A Python library for supply chain analysis, modelling, and simulation designed to replace Excel and VBA workflows. Includes a chat bot assistant for querying data.",
+      "what_they_built": "A full Python library with exponential smoothing forecasting (Holt's and simple), evolutionary algorithm optimization, SKU profiling, inventory recommendations, a reporting dashboard, and a Dash chatbot for natural language data queries.",
+      "tools_used": ["Python", "Flask", "Dash", "SQLAlchemy", "Cython"],
+      "link": "https://github.com/KevinFasusi/supplychainpy",
+      "category": "open-source-tool",
+      "why_inspiring": "A single developer built a complete SC Python library that replaces Excel-based workflows — exactly what most SC teams need."
+    },
+    {
+      "id": "sc-07",
+      "project_name": "Supply Chain Network Optimisation",
+      "creator": "Juan Duque Gonzalez (@jduquegonzalez)",
+      "description": "Jupyter notebooks solving classic supply chain optimization problems including Transportation and Transhipment Problems, inspired by MIT's MicroMaster in Supply Chain Management.",
+      "what_they_built": "Python implementations of transportation problem and transhipment problem solvers using linear programming, providing a flexible alternative to Excel-based solutions.",
+      "tools_used": ["Python", "PuLP", "Jupyter Notebooks", "NetworkX"],
+      "link": "https://github.com/jduquegonzalez/Supply-Chain-Network-Optimisation",
+      "category": "logistics",
+      "why_inspiring": "Student-built project directly from MIT coursework — proves you can learn SC optimization through practical coding."
+    },
+    {
+      "id": "sc-08",
+      "project_name": "SupplyChainDataModelling (Pharmaceutical SC)",
+      "creator": "Jose Rico (@josericodata)",
+      "description": "Streamlit app for pharmaceutical supply chain data analytics including LSTM demand forecasting, inventory optimization, customer segmentation, and statistical testing.",
+      "what_they_built": "A full Streamlit web application with LSTM neural network forecasting by SKU, one-year demand forecasts, inventory optimization algorithms, customer and product segmentation, and statistical hypothesis testing.",
+      "tools_used": ["Python", "Streamlit", "TensorFlow/LSTM", "scikit-learn", "Plotly"],
+      "link": "https://github.com/josericodata/SupplyChainDataModelling",
+      "category": "demand-forecasting",
+      "why_inspiring": "Complete end-to-end SC analytics app for pharma — from raw data to interactive web dashboard with deep learning forecasts."
+    },
+    {
+      "id": "sc-09",
+      "project_name": "AI-Powered Supply Chain Intelligence Dashboard",
+      "creator": "Katala Sanjana (@katala-sanjana)",
+      "description": "AI-powered responsive dashboard with multi-agent workflows using LangGraph orchestration and TinyLLaMA LLM for comprehensive supply chain analysis.",
+      "what_they_built": "A Streamlit dashboard with three specialized AI analysis modules coordinated by a LangGraph-based multi-agent pipeline, using TinyLLaMA for local AI inference.",
+      "tools_used": ["Python", "Streamlit", "LangGraph", "TinyLLaMA", "Multi-Agent AI"],
+      "link": "https://github.com/katala-sanjana/supply-chain-project-dashboard",
+      "category": "visualization",
+      "why_inspiring": "Combines cutting-edge multi-agent AI orchestration with practical SC dashboard — runs locally with no API costs."
+    },
+    {
+      "id": "sc-10",
+      "project_name": "LogiTrack Inventory Management System",
+      "creator": "Tanisheesh (@tanisheesh)",
+      "description": "Python and Streamlit-powered inventory management system for real-time warehouse optimization with multi-warehouse planning, interactive maps, and supply chain analytics.",
+      "what_they_built": "A web-based inventory system with real-time warehouse inventory distribution optimization, order management, interactive geographic maps, global coordinate support, and CSV/SQL data integration.",
+      "tools_used": ["Python", "Streamlit", "Folium Maps", "Pandas", "SQL"],
+      "link": "https://github.com/tanisheesh/LogiTrack",
+      "category": "inventory",
+      "why_inspiring": "Practical warehouse management tool that any small business could deploy — built by one developer."
+    },
+    {
+      "id": "sc-11",
+      "project_name": "AI-Powered Supply Chain Control Tower (n8n)",
+      "creator": "Samir Saci (via n8n template)",
+      "description": "No-code AI agent connected to Transportation Management Systems that answers questions about shipments, built with n8n workflow automation and GPT-4o connected to BigQuery.",
+      "what_they_built": "A control tower chatbot connected to BigQuery shipment data via n8n, with chat memory for follow-up questions. Requires no advanced programming skills and was built to be maintained by SC consultants with limited Python skills.",
+      "tools_used": ["n8n", "GPT-4o", "Google BigQuery", "JavaScript (2 lines only)"],
+      "link": "https://n8n.io/workflows/3305-ai-powered-supply-chain-control-tower-with-bigquery-and-gpt-4o/",
+      "secondary_links": ["https://towardsdatascience.com/automate-supply-chain-analytics-workflows-with-ai-agents-using-n8n/"],
+      "category": "automation",
+      "why_inspiring": "Proves you can build a production-quality AI control tower with zero Python code using n8n low-code platform."
+    },
+    {
+      "id": "sc-12",
+      "project_name": "Telegram Bot for Warehouse Inventory Counting",
+      "creator": "Samir Saci",
+      "description": "A Telegram bot built with n8n connected to a GPT-powered agent enabling voice commands for inventory cycle counts — designed for companies with low data maturity.",
+      "what_they_built": "A voice-activated Telegram bot where warehouse operators use audio messages to report inventory cycle counts, with AI processing the voice input and updating records. First concrete step in digital transformation for low-tech companies.",
+      "tools_used": ["n8n", "Telegram Bot API", "GPT", "Voice-to-Text"],
+      "link": "https://towardsdatascience.com/the-hidden-opportunity-in-ai-workflow-automation-with-n8n-for-low-tech-companies/",
+      "category": "automation",
+      "why_inspiring": "Solves a real problem for low-tech warehouses — lets operators do inventory counts by talking to their phone."
+    },
+    {
+      "id": "sc-13",
+      "project_name": "Demand Forecasting with Prophet (DataCo SC Dataset)",
+      "creator": "Enje Godinez (@enjegodinez)",
+      "description": "Kaggle notebook using Facebook Prophet for demand forecasting on the DataCo SMART SUPPLY CHAIN dataset for big data analysis.",
+      "what_they_built": "A complete demand forecasting pipeline using Prophet with seasonal decomposition, trend analysis, and evaluation metrics on a real SC dataset.",
+      "tools_used": ["Python", "Facebook Prophet", "Pandas", "Matplotlib"],
+      "link": "https://www.kaggle.com/code/enjegodinez/supply-chain-demand-forecasting-prophet",
+      "category": "demand-forecasting",
+      "why_inspiring": "Quick-start template for anyone wanting to forecast SC demand — just swap in your own data."
+    },
+    {
+      "id": "sc-14",
+      "project_name": "Demand Forecasting and Inventory Optimisation",
+      "creator": "Simon Tagbor (@simontagbor)",
+      "description": "Kaggle notebook combining demand forecasting with inventory optimization, demonstrating the link between accurate predictions and optimal stock levels.",
+      "what_they_built": "End-to-end pipeline from demand forecasting to inventory optimization recommendations, showing how forecast accuracy directly impacts stock decisions.",
+      "tools_used": ["Python", "Pandas", "scikit-learn", "Matplotlib"],
+      "link": "https://www.kaggle.com/code/simontagbor/demand-forecasting-and-inventory-optimisation",
+      "category": "inventory",
+      "why_inspiring": "Bridges the gap between forecasting and inventory optimization that many projects miss."
+    },
+    {
+      "id": "sc-15",
+      "project_name": "Demand Forecasting in Supply Chain Analytics",
+      "creator": "Graisy Biswal (@graisybiswal)",
+      "description": "Kaggle notebook covering demand forecasting techniques specifically for supply chain analytics, with exploratory analysis and multiple model comparisons.",
+      "what_they_built": "A comparison of multiple forecasting approaches applied to SC demand data with thorough EDA and model evaluation.",
+      "tools_used": ["Python", "Pandas", "scikit-learn", "Seaborn"],
+      "link": "https://www.kaggle.com/code/graisybiswal/demand-forecasting-in-supply-chain-analytics",
+      "category": "demand-forecasting",
+      "why_inspiring": "Excellent learning resource that walks through the full SC forecasting workflow."
+    },
+    {
+      "id": "sc-16",
+      "project_name": "ML Zoomcamp 2024 Retail Demand Forecasting Competition",
+      "creator": "DataTalks.Club community",
+      "description": "2024 Kaggle competition challenging participants to find the best ML solution for retail demand forecasting, with hundreds of solutions from individual data scientists.",
+      "what_they_built": "Competitive forecasting models for retail demand using gradient boosting, neural networks, and ensemble methods.",
+      "tools_used": ["LightGBM", "XGBoost", "Python", "Pandas"],
+      "link": "https://www.kaggle.com/competitions/ml-zoomcamp-2024-competition",
+      "category": "demand-forecasting",
+      "why_inspiring": "Hundreds of individual solutions you can study — recent 2024 competition with modern techniques."
+    },
+    {
+      "id": "sc-17",
+      "project_name": "Rohlik Orders Forecasting Challenge Solutions",
+      "creator": "Multiple individual competitors",
+      "description": "Kaggle competition to predict grocery delivery orders at Rohlik warehouses across Europe, with publicly shared solutions achieving 3-5% MAPE.",
+      "what_they_built": "Order forecasting models for grocery delivery using XGBoost with lag features (5.54% MAPE), Prophet + ensemble approaches, and simple average ensembles achieving 3.18% MAPE.",
+      "tools_used": ["XGBoost", "Prophet", "LightGBM", "CatBoost", "Python"],
+      "link": "https://www.kaggle.com/competitions/rohlik-orders-forecasting-challenge",
+      "secondary_links": ["https://github.com/zarreh/rohlik-orders-forecasting-challenge", "https://github.com/awesniuk/rohlik_order_prediction"],
+      "category": "demand-forecasting",
+      "why_inspiring": "Real grocery delivery forecasting with open solutions — directly applicable to food SC."
+    },
+    {
+      "id": "sc-18",
+      "project_name": "M5 Forecasting Competition Winner (1st Place)",
+      "creator": "YeonJun In (YJ_STU) — undergraduate student at Kyung Hee University",
+      "description": "Winning solution for the M5 Walmart sales forecasting competition, achieving 22.4% improvement over the top benchmark using an ensemble of LightGBM models.",
+      "what_they_built": "An equal-weighted combination of various LightGBM models (both direct and recursive), using features including calendar info, promotions, prices, and sales data, cross-validated on four 28-day windows.",
+      "tools_used": ["LightGBM", "Python", "Cross-Learning"],
+      "link": "https://www.kaggle.com/c/m5-forecasting-accuracy/discussion/163684",
+      "secondary_links": ["https://github.com/Mcompetitions/M5-methods"],
+      "category": "demand-forecasting",
+      "why_inspiring": "An undergraduate student beat 7,092 competitors and professional data scientists. The code is publicly available."
+    },
+    {
+      "id": "sc-19",
+      "project_name": "XGBoost Store Demand Forecasting & Inventory Optimization",
+      "creator": "Samir Saci",
+      "description": "Using XGBoost for retail store demand forecasting combined with inventory rules to reduce stockouts and carbon footprint.",
+      "what_they_built": "A prediction model using XGBoost that optimizes replenishment strategy, combining forecasting with green inventory management to reduce both stockouts and delivery carbon footprint.",
+      "tools_used": ["Python", "XGBoost", "Pandas", "Kaggle Dataset"],
+      "link": "https://towardsdatascience.com/machine-learning-for-store-demand-forecasting-and-inventory-optimization-part-1-xgboost-vs-9952d8303b48/",
+      "category": "demand-forecasting",
+      "why_inspiring": "Uniquely combines demand forecasting with sustainability — green inventory management."
+    },
+    {
+      "id": "sc-20",
+      "project_name": "SCIMAI-Gym: Deep RL for Supply Chain Inventory",
+      "creator": "Stranieri et al. (frenkowski)",
+      "description": "Python library for addressing supply chain inventory management using deep reinforcement learning, published in the International Journal of Production Economics (2024).",
+      "what_they_built": "An OpenAI Gym-compatible environment for training deep RL agents on multi-stage stochastic supply chain inventory problems.",
+      "tools_used": ["Python", "OpenAI Gym", "Deep RL", "TensorFlow/PyTorch"],
+      "link": "https://github.com/frenkowski/SCIMAI-Gym",
+      "category": "inventory",
+      "why_inspiring": "Academic research turned into an open-source library — lets anyone experiment with RL for inventory management."
+    },
+    {
+      "id": "sc-21",
+      "project_name": "TensorHouse SC Reinforcement Learning",
+      "creator": "Ilya Katsov (@ikatsov)",
+      "description": "Collection of reference Jupyter notebooks for enterprise AI/ML including a multi-echelon supply chain RL prototype optimizing control policies.",
+      "what_they_built": "A prototype demonstrating how multi-echelon supply chain control policies can be optimized using deep RL, handling stochastic demand, storage/transportation costs, and capacity constraints.",
+      "tools_used": ["Python", "TensorFlow", "Jupyter Notebooks", "Deep RL"],
+      "link": "https://github.com/ikatsov/tensor-house",
+      "category": "inventory",
+      "why_inspiring": "Industry-proven RL approaches for SC — not just academic theory, but practical implementations."
+    },
+    {
+      "id": "sc-22",
+      "project_name": "RL Inventory Management (Actor-Critic)",
+      "creator": "mangushev (@mangushev)",
+      "description": "Supply chain inventory management using RL actor-critic methods (A2C and PPO) to minimize stockouts, reduce waste, and balance quantities.",
+      "what_they_built": "A reinforcement learning system with separate actor-critic networks (A2C, A2C-mod, PPO) for multi-product inventory optimization focusing on lowest inventory without stockouts.",
+      "tools_used": ["Python", "PyTorch", "Stable-Baselines3", "A2C", "PPO"],
+      "link": "https://github.com/mangushev/inventory_management",
+      "category": "inventory",
+      "why_inspiring": "Demonstrates modern RL algorithms applied to a practical inventory balancing problem."
+    },
+    {
+      "id": "sc-23",
+      "project_name": "RL for Supply Chain Logistics (Garment Factory)",
+      "creator": "Yudhisteer (@yudhisteer)",
+      "description": "Using reinforcement learning to design autonomous robot logistics models for supplying garment parts between factory departments.",
+      "what_they_built": "A logistics model for autonomous robots that supply garment parts from Cutting Dept to Makeup Dept, optimizing for shortest time and most efficient path using RL.",
+      "tools_used": ["Python", "Reinforcement Learning", "Simulation"],
+      "link": "https://github.com/yudhisteer/Reinforcement-Learning-for-Supply-Chain-Management",
+      "category": "logistics",
+      "why_inspiring": "Applies RL to a real manufacturing logistics problem — autonomous robot routing in a garment factory."
+    },
+    {
+      "id": "sc-24",
+      "project_name": "frePPLe — Open Source Supply Chain Planning",
+      "creator": "frePPLe community (open-source)",
+      "description": "Open-source production planning and scheduling system implementing time series forecasting, theory of constraints, pull-based planning, and lean manufacturing.",
+      "what_they_built": "A full supply chain planning suite with demand forecasting (time series algorithms), production scheduling (constraints-based), material requirements planning, and capacity planning. Available as Docker containers and Ubuntu packages.",
+      "tools_used": ["Python", "Django", "PostgreSQL", "Docker"],
+      "link": "https://github.com/frePPLe/frepple",
+      "category": "open-source-tool",
+      "why_inspiring": "A complete open-source alternative to expensive commercial planning software — free for small businesses."
+    },
+    {
+      "id": "sc-25",
+      "project_name": "Supply Chain Analytics with Streamlit (Fashion & Beauty)",
+      "creator": "Carina de Souza (@carinadesouza)",
+      "description": "Internship project analyzing supply chain of a Fashion and Beauty startup selling makeup products, with an interactive Streamlit dashboard.",
+      "what_they_built": "Complete SC analysis dashboard with product performance metrics, shipping efficiency tracking, customer demographics, profit margins, shipping costs, and lead time analysis for a fashion startup.",
+      "tools_used": ["Python", "Streamlit", "Pandas", "Plotly"],
+      "link": "https://github.com/carinadesouza/Supply-Chain-Management-Dashboard-Analysis-Project",
+      "category": "visualization",
+      "why_inspiring": "Real internship project with a working dashboard — great template for SC students."
+    },
+    {
+      "id": "sc-26",
+      "project_name": "Supply Chain Maturity Model (ML + NLP + Real-time)",
+      "creator": "Deepak Mittal (@yesdeepakmittal)",
+      "description": "Supply Chain Maturity model combining ML, NLP, and real-time analysis from databases, macroeconomic indicators, and social media sentiment.",
+      "what_they_built": "A multi-source analytics system pulling data from databases, macroeconomic indicators, and Twitter sentiment analysis to assess supply chain maturity in real-time.",
+      "tools_used": ["Python", "NLP", "Twitter API", "SQL", "Macroeconomic Data APIs"],
+      "link": "https://github.com/yesdeepakmittal/SupplyChainModel",
+      "category": "automation",
+      "why_inspiring": "Combines unconventional data sources (Twitter, macroeconomics) with traditional SC data for holistic analysis."
+    },
+    {
+      "id": "sc-27",
+      "project_name": "Supply Chain Analytics: Clustering-Classification-Prediction",
+      "creator": "Oprishri (@Oprishri)",
+      "description": "Three-step ML pipeline for demand forecasting: first cluster items, then classify them, then predict demand — a novel approach to SC forecasting.",
+      "what_they_built": "A demand forecasting system using a three-step ML pipeline: clustering items by characteristics, classifying clusters, then building prediction models per cluster for improved accuracy.",
+      "tools_used": ["Python", "scikit-learn", "K-Means", "Random Forest"],
+      "link": "https://github.com/Oprishri/Supply-Chain-Analytics-Project",
+      "category": "demand-forecasting",
+      "why_inspiring": "Creative three-step approach to forecasting that could improve accuracy for companies with diverse product portfolios."
+    },
+    {
+      "id": "sc-28",
+      "project_name": "Supply Chain Sustainability Reporting with Python",
+      "creator": "Samir Saci (@samirsaci)",
+      "description": "Methodology to report CO2 emissions of a distribution network using Python and PowerBI, following the GHG Protocol corporate standard.",
+      "what_they_built": "Automated CO2 emissions calculator for Scope 3 downstream transportation, with PowerBI dashboards for sustainability reporting aligned with GHG Protocol standards.",
+      "tools_used": ["Python", "PowerBI", "Pandas", "GHG Protocol Framework"],
+      "link": "https://github.com/samirsaci/supply-chain-sustainability",
+      "category": "open-source-tool",
+      "why_inspiring": "Addresses the growing ESG reporting requirement that every SC team now faces."
+    },
+    {
+      "id": "sc-29",
+      "project_name": "Supply Chain Network Optimization (Martin Castro)",
+      "creator": "Martin Castro Alvarez (@MartinCastroAlvarez)",
+      "description": "Supply chain optimization algorithms using Python, covering network design and logistics optimization problems.",
+      "what_they_built": "Python implementations of various supply chain network optimization algorithms for facility location and distribution planning.",
+      "tools_used": ["Python", "PuLP", "NetworkX"],
+      "link": "https://github.com/MartinCastroAlvarez/supply-chain-optimization",
+      "category": "logistics",
+      "why_inspiring": "Clean, algorithmic approach to SC network design that can be adapted to any distribution network."
+    },
+    {
+      "id": "sc-30",
+      "project_name": "Deep RL for Multi-Echelon Inventory Management",
+      "creator": "Kanishk Parganiha (@Kanishkparganiha)",
+      "description": "Using OR-Gym toolkit for reinforcement learning on multi-echelon inventory management with erratic consumer demand.",
+      "what_they_built": "RL agents trained on multi-echelon supply chain environments (OR-Gym) to handle erratic daily demand, with comparison against traditional inventory policies. Uses Ray for distributed training.",
+      "tools_used": ["Python", "OR-Gym", "Ray", "Stable-Baselines3"],
+      "link": "https://github.com/Kanishkparganiha/deep-reinforcement-learning-on-multi-echelon-inventory-management",
+      "category": "inventory",
+      "why_inspiring": "Accessible entry point to RL for inventory — uses standard toolkits that anyone can install."
+    },
+    {
+      "id": "sc-31",
+      "project_name": "SupplyChainv0 Gym — RL for Optimal Inventory Policy",
+      "creator": "Kishor Kukreja (@kishorkukreja)",
+      "description": "Reinforcement learning environments for supply chain optimization including multi-echelon inventory management and network management problems.",
+      "what_they_built": "OpenAI Gym-compatible environments for multiple SC problems: inventory management with/without backlogs, multi-echelon networks, each solvable with both RL and traditional OR techniques.",
+      "tools_used": ["Python", "OpenAI Gym", "Reinforcement Learning"],
+      "link": "https://github.com/kishorkukreja/SupplyChainv0_gym",
+      "category": "open-source-tool",
+      "why_inspiring": "Ready-made simulation environments — plug in your own RL algorithm and start experimenting."
+    },
+    {
+      "id": "sc-32",
+      "project_name": "LSTM Inventory Forecasting with Transfer Learning",
+      "creator": "Roy Geagea (@RoyGeagea)",
+      "description": "AI-powered inventory management using LSTM models and transfer learning to forecast product demand, minimize stockouts, and reduce overstock.",
+      "what_they_built": "An LSTM-based forecasting system designed for easy adaptation to real-world business data, with transfer learning to bootstrap models on new products with limited history.",
+      "tools_used": ["Python", "TensorFlow/Keras", "LSTM", "Transfer Learning"],
+      "link": "https://github.com/RoyGeagea/inventory-management",
+      "category": "inventory",
+      "why_inspiring": "Transfer learning for demand forecasting is cutting-edge — lets you forecast new products without years of data."
+    },
+    {
+      "id": "sc-33",
+      "project_name": "Optimizing Supply Chain Dynamics (RIT Master's Thesis)",
+      "creator": "Mohammad Zubin Siddiqui (Rochester Institute of Technology)",
+      "description": "Master's thesis using ML for demand forecasting and late delivery analysis, providing data-driven models to reduce risks and enhance operational efficiency.",
+      "what_they_built": "ML models for two SC problems: demand forecasting and root cause analysis of delivery delays, with actionable recommendations for risk reduction.",
+      "tools_used": ["Python", "scikit-learn", "Pandas", "Statistical Analysis"],
+      "link": "https://repository.rit.edu/cgi/viewcontent.cgi?article=12919&context=theses",
+      "category": "demand-forecasting",
+      "why_inspiring": "Full thesis with methodology — ideal for students wanting to understand the research process behind SC AI."
+    },
+    {
+      "id": "sc-34",
+      "project_name": "Universal Streamlit Dashboard for SC, Finance & Reporting",
+      "creator": "VinGIT654 (@VinGIT654)",
+      "description": "Interactive zero-code Streamlit dashboard for dynamic data analysis with advanced filtering, pivot tables, and download options — ideal for supply chain workflows.",
+      "what_they_built": "A universal analytics dashboard supporting CSV/Excel/Google Sheets upload, multi-column filtering, pivot table generation, chart visualization, and custom report downloads.",
+      "tools_used": ["Python", "Streamlit", "Pandas", "Plotly"],
+      "link": "https://github.com/VinGIT654/DASHBOARD",
+      "category": "visualization",
+      "why_inspiring": "Upload any SC data and instantly get an interactive dashboard — zero coding required from end users."
+    },
+    {
+      "id": "sc-35",
+      "project_name": "Supply Chain Analytics with Pooja Patel (Tableau)",
+      "creator": "Pooja Patel (@poojapatel26)",
+      "description": "Supply chain analytics project using Python and Tableau, analyzing supply chain inefficiencies with informative dashboards for business stakeholders.",
+      "what_they_built": "Comprehensive SC analytics including inefficiency identification, root cause analysis, and Tableau dashboards with proposed strategic business enhancements.",
+      "tools_used": ["Python", "Tableau", "Pandas"],
+      "link": "https://github.com/poojapatel26/Supply-Chain-Analytics",
+      "category": "visualization",
+      "why_inspiring": "Bridges Python analytics with Tableau visualization — a common enterprise workflow."
+    }
+  ],
+
+  "type2_general_ai_projects_for_sc": [
+    {
+      "id": "gen-01",
+      "project_name": "PyVRP — Vehicle Routing Problem Solver",
+      "creator": "Wouda, Lan, and Kool (published in INFORMS Journal on Computing, 2024)",
+      "description": "High-performance, open-source Python library for solving vehicle routing problems with support for capacities, time windows, multiple vehicle types, and depot reloading.",
+      "sc_application": "Directly applicable to last-mile delivery optimization, fleet routing, distribution planning, and multi-depot logistics. Handles real constraints like time windows, vehicle capacities, and access restrictions.",
+      "tools_used": ["Python", "C++ (backend)", "NumPy"],
+      "link": "https://github.com/PyVRP/PyVRP",
+      "category": "route-optimization"
+    },
+    {
+      "id": "gen-02",
+      "project_name": "VROOM — Vehicle Routing Open-source Optimization Machine",
+      "creator": "VROOM Project community",
+      "description": "Fast optimization engine for vehicle routing problems solving TSP, CVRP, time-windowed routing, and multi-depot heterogeneous vehicle problems.",
+      "sc_application": "Production-grade route optimization for delivery fleets, field service scheduling, and pickup/delivery operations. The Python wrapper (pyvroom) makes it easy to integrate into SC planning tools.",
+      "tools_used": ["C++", "Python (pyvroom wrapper)"],
+      "link": "https://github.com/VROOM-Project/vroom",
+      "secondary_links": ["https://github.com/VROOM-Project/pyvroom"],
+      "category": "route-optimization"
+    },
+    {
+      "id": "gen-03",
+      "project_name": "Vehicle Routing Optimizer (Google OR-Tools)",
+      "creator": "A-M-Amine (@A-M-Amine)",
+      "description": "Individual project solving VRP variants using Google OR-Tools and Open Route Service API, generating GeoJSON paths for visualization.",
+      "sc_application": "Ready-to-use logistics routing tool with real-world map visualization. Can be adapted for distribution center route planning and delivery fleet optimization.",
+      "tools_used": ["Python", "Google OR-Tools", "Open Route Service API", "GeoJSON"],
+      "link": "https://github.com/A-M-Amine/Vehicle-Routing-Optimizer",
+      "category": "route-optimization"
+    },
+    {
+      "id": "gen-04",
+      "project_name": "Box Detection in Warehouse (Computer Vision)",
+      "creator": "Abhijeet Gupta (@abhijeetgupta23)",
+      "description": "Computer vision application for detecting boxes on conveyor belts, capable of counting, classification, and damage detection.",
+      "sc_application": "Warehouse inventory counting automation, conveyor belt monitoring, damaged package detection, and quality control at receiving docks.",
+      "tools_used": ["Python", "OpenCV", "TensorFlow/PyTorch", "YOLO"],
+      "link": "https://github.com/abhijeetgupta23/Box-Detection-in-Warehouse-using-Vision-Based-ML-Engineering",
+      "category": "computer-vision"
+    },
+    {
+      "id": "gen-05",
+      "project_name": "Inventory Management with Computer Vision (YOLO + GPT-4)",
+      "creator": "Ayush Pai (@ayushpai)",
+      "description": "Inventory management system combining YOLO object detection with GPT-4 vision insights and SingleStore database for automated stock tracking.",
+      "sc_application": "Automated inventory counting and tracking using cameras instead of manual counts or barcode scanning. The GPT-4 integration adds natural language reporting capabilities.",
+      "tools_used": ["Python", "YOLO", "GPT-4 Vision", "SingleStore", "Jupyter Notebooks"],
+      "link": "https://github.com/ayushpai/inventory-mgnt-singlestore",
+      "category": "computer-vision"
+    },
+    {
+      "id": "gen-06",
+      "project_name": "TensorFlow Object Counting API",
+      "creator": "Ahmet Ozlu (@ahmetozlu)",
+      "description": "Open-source framework built on TensorFlow and Keras for building custom object counting systems with real-time video support.",
+      "sc_application": "Count items on production lines, track vehicles at loading docks, monitor foot traffic in warehouses, and count pallets or containers in yards.",
+      "tools_used": ["Python", "TensorFlow", "Keras", "OpenCV"],
+      "link": "https://github.com/ahmetozlu/tensorflow_object_counting_api",
+      "category": "computer-vision"
+    },
+    {
+      "id": "gen-07",
+      "project_name": "Automated Defect Detection for Manufacturing QA",
+      "creator": "Aksh-ay06 (university project, IENG 493C)",
+      "description": "Automated defect detection in cell phone manufacturing using ML and deep learning models on a conveyor belt camera system.",
+      "sc_application": "Quality inspection automation for any manufacturing line. The hands-free, non-invasive image-based approach can be adapted to inspect any product on a conveyor belt.",
+      "tools_used": ["Python", "scikit-learn", "TensorFlow", "KNN", "Random Forest", "SVM"],
+      "link": "https://github.com/aksh-ay06/Automated-Defect-Detection-System-for-Quality-Assurance-in-Manufacturing",
+      "category": "computer-vision"
+    },
+    {
+      "id": "gen-08",
+      "project_name": "Smart_Inspect (VIT-Powered Quality Control)",
+      "creator": "eekamal (@eekamal)",
+      "description": "Vision Transformer (VIT) based AI model for quality image classification using AI-enabled cameras and IoT devices.",
+      "sc_application": "Real-time manufacturing quality control using modern transformer architecture. Can monitor production lines and flag defects or anomalies automatically.",
+      "tools_used": ["Python", "Vision Transformer (ViT)", "PyTorch", "IoT"],
+      "link": "https://github.com/eekamal/Smart_Inspect",
+      "category": "computer-vision"
+    },
+    {
+      "id": "gen-09",
+      "project_name": "Manufacturing Quality Inspection (3 Approaches)",
+      "creator": "Rajdeep Biswas (@RajdeepBiswas)",
+      "description": "Deep learning image classification for casting defect detection, built three ways for different technical skill levels with a REST API endpoint.",
+      "sc_application": "Quality inspection for casting manufacturing with a REST endpoint that accepts images and returns defect classification. The three-tier approach (no-code, low-code, full-code) makes it accessible to any SC team.",
+      "tools_used": ["Python", "TensorFlow", "Keras", "Flask REST API", "Kaggle Dataset"],
+      "link": "https://github.com/RajdeepBiswas/Manufacturing-Quality-Inspection",
+      "category": "computer-vision"
+    },
+    {
+      "id": "gen-10",
+      "project_name": "Time Series Forecasting with LSTM, ARIMA & Prophet",
+      "creator": "Ben Polzin (@polzinben)",
+      "description": "Comprehensive comparison of ARIMA, Prophet, and LSTM for time series forecasting, with the LSTM achieving 38% improvement over baseline.",
+      "sc_application": "The forecasting techniques demonstrated are directly applicable to demand planning, inventory forecasting, and capacity planning. The LSTM approach handles complex seasonality patterns common in SC data.",
+      "tools_used": ["Python", "TensorFlow", "ARIMA", "Prophet", "LSTM"],
+      "link": "https://github.com/polzinben/Time-Series-Forecasting",
+      "category": "time-series-forecasting"
+    },
+    {
+      "id": "gen-11",
+      "project_name": "Time Series Analysis and Forecasting Comprehensive Guide",
+      "creator": "Ajit Singh (@ajitsingh98)",
+      "description": "Complete progression from time series concepts through EDA, classical models, deep learning, and Prophet for both univariate and multivariate forecasting.",
+      "sc_application": "Complete educational resource for SC professionals wanting to learn forecasting from basics to advanced deep learning approaches.",
+      "tools_used": ["Python", "Prophet", "LSTM", "ARIMA", "Pandas", "TensorFlow"],
+      "link": "https://github.com/ajitsingh98/Time-Series-Analysis-and-Forecasting-with-Python",
+      "category": "time-series-forecasting"
+    },
+    {
+      "id": "gen-12",
+      "project_name": "DeepOD — Deep Learning Outlier/Anomaly Detection",
+      "creator": "Hongzuo Xu (@xuhongzuo)",
+      "description": "Open-source library with 27 deep anomaly detection algorithms supporting LSTM, GRU, TCN, Conv, and Transformer for time-series data.",
+      "sc_application": "Detect anomalies in SC data: unusual demand spikes, equipment sensor failures, logistics delays, quality issues, and fraud in procurement. Supports 27 different algorithms to find what works best for your data.",
+      "tools_used": ["Python", "PyTorch", "LSTM", "GRU", "Transformer"],
+      "link": "https://github.com/xuhongzuo/DeepOD",
+      "category": "anomaly-detection"
+    },
+    {
+      "id": "gen-13",
+      "project_name": "Anomaly Detection for Multivariate Time Series",
+      "creator": "ali3brt (@ali3brt)",
+      "description": "Individual developer project using Isolation Forest, LSTM, and Gradient Boosting for anomaly detection with real-time sliding window capabilities.",
+      "sc_application": "Real-time anomaly detection for SC sensor data, IoT monitoring, demand spikes, and equipment health monitoring. The sliding window approach works for streaming warehouse or logistics data.",
+      "tools_used": ["Python", "Isolation Forest", "LSTM", "Gradient Boosting", "scikit-learn"],
+      "link": "https://github.com/ali3brt/anomaly-detection-time-series",
+      "category": "anomaly-detection"
+    },
+    {
+      "id": "gen-14",
+      "project_name": "Predictive Maintenance for Industrial Equipment (Streamlit App)",
+      "creator": "Rohan Matt (@rohanmatt)",
+      "description": "Interactive Streamlit web application for predictive maintenance with sensor data visualization, RUL prediction, and anomaly detection.",
+      "sc_application": "Predict when warehouse equipment, forklifts, conveyor belts, or manufacturing machinery will fail. Reduces downtime and emergency maintenance costs.",
+      "tools_used": ["Python", "Streamlit", "scikit-learn", "Pandas", "Matplotlib"],
+      "link": "https://github.com/rohanmatt/Predictive-Maintenance-for-Industrial-Equipment",
+      "category": "predictive-maintenance"
+    },
+    {
+      "id": "gen-15",
+      "project_name": "IoT Predictive Maintenance System",
+      "creator": "Karim Osman (@karimosman89)",
+      "description": "Full IoT predictive maintenance pipeline: sensor simulation, Kafka streaming, Spark processing, AWS IoT Core, and ML with MLflow tracking.",
+      "sc_application": "End-to-end architecture for monitoring warehouse or factory equipment with IoT sensors, predicting failures, and optimizing maintenance schedules.",
+      "tools_used": ["Python", "Apache Kafka", "Apache Spark", "AWS IoT Core", "MLflow"],
+      "link": "https://github.com/karimosman89/iot-predictive-maintenance",
+      "category": "predictive-maintenance"
+    },
+    {
+      "id": "gen-16",
+      "project_name": "RAG Chatbot for Document Analysis (LangChain + Ollama)",
+      "creator": "tschechlovdev (@tschechlovdev)",
+      "description": "Simple RAG chatbot that chats with your own PDFs using LangChain and Ollama for completely local, private document analysis.",
+      "sc_application": "Analyze supplier contracts, SOP manuals, quality documents, regulatory compliance files, and freight agreements using natural language questions — all running locally with no data leaving your network.",
+      "tools_used": ["Python", "LangChain", "Ollama", "FAISS", "Granite 3.3 LLM"],
+      "link": "https://github.com/tschechlovdev/rag_chatbot",
+      "secondary_links": ["https://medium.com/@tschechd/retrieval-augmented-generation-rag-in-practice-implementing-a-chatbot-with-langchain-and-ollama-79d6d19642f7"],
+      "category": "llm-chatbot"
+    },
+    {
+      "id": "gen-17",
+      "project_name": "Full-Stack RAG Chat (LangChain + React)",
+      "creator": "Herc-Ch (@Herc-Ch)",
+      "description": "Full-stack RAG chatbot with smart fallback — uses RAG when documents are relevant, switches to general LLM when they are not, with conversation history.",
+      "sc_application": "Build an internal knowledge assistant for SC teams that can answer questions from your company documents while also handling general SC questions. The smart fallback prevents poor answers when docs are not relevant.",
+      "tools_used": ["Python", "LangChain", "Flask", "React", "Pinecone", "OpenAI"],
+      "link": "https://github.com/Herc-Ch/LangChain-RAG-Chat",
+      "category": "llm-chatbot"
+    },
+    {
+      "id": "gen-18",
+      "project_name": "Paperless-GPT (LLM Document Digitalization)",
+      "creator": "icereed (@icereed)",
+      "description": "Uses LLMs and vision models to enhance paperless document management — cleaning OCR text, auto-tagging, and archiving documents.",
+      "sc_application": "Digitize and organize paper-based SC documents: BOLs, packing slips, invoices, customs forms, quality certificates. LLM cleans OCR errors and auto-categorizes documents.",
+      "tools_used": ["Python", "GPT-4o/GPT-3.5", "Docker", "paperless-ngx"],
+      "link": "https://github.com/icereed/paperless-gpt",
+      "category": "document-processing"
+    },
+    {
+      "id": "gen-19",
+      "project_name": "AI Receipt Parser (OCR + GPT-4)",
+      "creator": "JustCabaret (@JustCabaret)",
+      "description": "AI-powered application using Tesseract OCR and GPT-4 to extract receipt data into structured JSON, stored in MySQL with a web interface.",
+      "sc_application": "Automate expense tracking for logistics teams, parse vendor invoices and receipts, extract structured data from unstructured SC documents for ERP entry.",
+      "tools_used": ["Python", "Tesseract OCR", "GPT-4", "MySQL", "Flask"],
+      "link": "https://github.com/JustCabaret/AIReceiptParser",
+      "category": "document-processing"
+    },
+    {
+      "id": "gen-20",
+      "project_name": "LLM-Based Invoice OCR",
+      "creator": "Shafqaat Malik (@ShafqaatMalik)",
+      "description": "Intelligent invoice data extraction using LLM vision models and OCR with dual processing modes via FastAPI and Gradio interface.",
+      "sc_application": "Automate accounts payable processing, extract line items from supplier invoices, and auto-match PO numbers — reducing manual data entry in procurement.",
+      "tools_used": ["Python", "FastAPI", "Gradio", "LLM Vision Models", "OCR"],
+      "link": "https://github.com/ShafqaatMalik/llm-based-invoice-ocr",
+      "category": "document-processing"
+    },
+    {
+      "id": "gen-21",
+      "project_name": "Pathway — Real-Time ETL for LLM Pipelines",
+      "creator": "Pathway community",
+      "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG — processing data as it flows rather than in batches.",
+      "sc_application": "Build real-time SC data pipelines that process IoT sensor data, order streams, and logistics events as they happen. Integrates with LLMs for real-time AI analysis of SC data flows.",
+      "tools_used": ["Python", "Stream Processing", "LLM Integration"],
+      "link": "https://github.com/pathwaycom/pathway",
+      "category": "data-pipeline"
+    },
+    {
+      "id": "gen-22",
+      "project_name": "Predictive Maintenance with Sensor Data (Random Forest + DL)",
+      "creator": "Samuel Data (@samueldata)",
+      "description": "Complete predictive maintenance pipeline: sensor data analysis, model training (Random Forest + TensorFlow), visualization, and automated PDF report generation.",
+      "sc_application": "Monitor manufacturing equipment or warehouse machinery health. The automated PDF reporting feature is especially useful for maintenance teams who need regular reports without coding.",
+      "tools_used": ["Python", "scikit-learn", "TensorFlow", "Pandas", "FPDF"],
+      "link": "https://github.com/samueldata/predictive-maintenance",
+      "category": "predictive-maintenance"
+    }
+  ],
+
+  "additional_resources": {
+    "kaggle_competitions": [
+      {
+        "name": "Store Item Demand Forecasting Challenge",
+        "description": "Predict 3 months of item sales at different stores — one of the most popular demand forecasting competitions.",
+        "link": "https://www.kaggle.com/competitions/demand-forecasting-kernels-only"
+      },
+      {
+        "name": "M5 Forecasting — Accuracy",
+        "description": "Estimate unit sales of Walmart retail goods. 42,840 time series, $50K prize, 7,092 participants.",
+        "link": "https://www.kaggle.com/competitions/m5-forecasting-accuracy"
+      },
+      {
+        "name": "M5 Forecasting — Uncertainty",
+        "description": "Estimate the uncertainty distribution of Walmart unit sales (companion to M5 Accuracy).",
+        "link": "https://www.kaggle.com/competitions/m5-forecasting-uncertainty"
+      },
+      {
+        "name": "Rohlik Orders Forecasting Challenge",
+        "description": "Predict grocery delivery orders at European warehouses for the next 60 days.",
+        "link": "https://www.kaggle.com/competitions/rohlik-orders-forecasting-challenge"
+      },
+      {
+        "name": "HP Supply Chain Optimization",
+        "description": "Predict future inventory levels at HP as part of HackUPC challenge.",
+        "link": "https://www.kaggle.com/competitions/hp-supply-chain-optimization"
+      },
+      {
+        "name": "Rohlik Sales Forecasting Challenge V2",
+        "description": "Second iteration of the Rohlik forecasting challenge with updated data.",
+        "link": "https://www.kaggle.com/competitions/rohlik-sales-forecasting-challenge-v2"
+      }
+    ],
+    "open_source_sc_planning_tools": [
+      {
+        "name": "frePPLe",
+        "description": "Open-source supply chain planning (production scheduling, forecasting, MRP).",
+        "link": "https://github.com/frePPLe/frepple"
+      },
+      {
+        "name": "ERPNext",
+        "description": "Full open-source ERP with inventory, sales, purchase, manufacturing, and accounting modules.",
+        "link": "https://github.com/frappe/erpnext"
+      },
+      {
+        "name": "InvenTree",
+        "description": "Open-source inventory management with powerful stock control and part tracking, built on Python/Django.",
+        "link": "https://github.com/inventree/InvenTree"
+      }
+    ],
+    "key_learning_channels": [
+      {
+        "name": "Samir Saci — Supply Science (YouTube)",
+        "description": "Operational analytics, AI solutions, and sustainability for supply chain.",
+        "link": "https://www.samirsaci.com/"
+      },
+      {
+        "name": "Coursera — Machine Learning for Supply Chains",
+        "description": "Free-to-enroll specialization by LearnQuest covering ML techniques for SC outcomes.",
+        "link": "https://www.coursera.org/specializations/machine-learning-supply-chain"
+      },
+      {
+        "name": "M5 Methods Repository",
+        "description": "Open-source code from all M5 competition winners for replicating their submissions.",
+        "link": "https://github.com/Mcompetitions/M5-methods"
+      }
+    ],
+    "curated_reference_lists": [
+      {
+        "name": "awesome-TS-anomaly-detection",
+        "description": "Curated list of tools and datasets for time series anomaly detection.",
+        "link": "https://github.com/rob-med/awesome-TS-anomaly-detection"
+      },
+      {
+        "name": "awesome-industrial-anomaly-detection",
+        "description": "Paper list and datasets for industrial image anomaly/defect detection (TCYB 2024).",
+        "link": "https://github.com/M-3LAB/awesome-industrial-anomaly-detection"
+      },
+      {
+        "name": "Surface-Defect-Detection",
+        "description": "Largest open-source industrial defect detection database and paper collection.",
+        "link": "https://github.com/Charmve/Surface-Defect-Detection"
+      },
+      {
+        "name": "anomaly-detection-resources",
+        "description": "Comprehensive anomaly detection books, papers, videos, and toolboxes (updated 2025).",
+        "link": "https://github.com/yzhao062/anomaly-detection-resources"
+      }
+    ]
+  }
+}
