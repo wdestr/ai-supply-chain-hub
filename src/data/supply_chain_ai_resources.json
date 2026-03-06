@@ -4388,6 +4388,51 @@
       "function": "Supply Chain Finance / Billing Automation",
       "key_customers": [],
       "ai_approach": "AI-driven extraction and matching of commercial terms from contracts, SLAs, rate cards, and unstructured communications. Automates billing reconciliation and dispute resolution across logistics and supply chain finance operations."
+    },
+    {
+      "name": "WiseTech Global",
+      "url": "https://www.wisetechglobal.com",
+      "founded": "1994",
+      "funding": "Public (ASX:WTC), ~$21B+ market cap",
+      "description": "Leading developer of logistics execution software. Flagship product CargoWise is a cloud-based platform that unifies end-to-end supply chain operations — freight forwarding, customs compliance, warehousing, transport, and e-commerce — on a single system. Used by 17,000+ logistics providers globally, including 46 of the top 50 logistics providers and 24 of the top 25 freight forwarders.",
+      "function": "Logistics Execution / Freight Forwarding Software",
+      "key_customers": [
+        "DHL",
+        "Hapag-Lloyd",
+        "3M",
+        "Epson",
+        "Hyundai"
+      ],
+      "ai_approach": "Embedded AI across CargoWise via AI Workflow Engine and AI Management Engine for automating operational processes, AI Classification Assistant for trade/tariff classification, ComplianceWise for regulatory compliance, and Shipamax (acquired) using ML to convert unstructured documents into structured data for automated processing."
+    },
+    {
+      "name": "Rippey AI",
+      "url": "https://rippey.ai",
+      "founded": "2019",
+      "funding": "~$4.8M raised, acquired by PayCargo (2024)",
+      "description": "Logistics-focused AI company that automates operational processes for freight forwarders, NVOCCs, 3PLs, ocean carriers, and trucking companies. Provides conversational AI and document ML tools that automate email responses, quote generation, shipment creation, ISF filing, invoice reconciliation, and document processing. Reduces quote response time from 24-48 hours to seconds.",
+      "function": "Logistics Automation / Freight Process Automation",
+      "key_customers": [
+        "PayCargo",
+        "Primus Solutions",
+        "Carrier Logistics Inc."
+      ],
+      "ai_approach": "Conversational AI with logistics-specific language library for email response bots and chatbots, Document ML for extracting data from invoices and shipping documents, automated quote generation bots that process RFQ emails and return pricing in seconds, and shipment creation bots that auto-populate ERP/TMS systems from unstructured inputs."
+    },
+    {
+      "name": "Raft",
+      "url": "https://www.raft.ai",
+      "founded": "2017",
+      "funding": "$46.7M raised (Series B led by Eight Roads, 2023)",
+      "description": "Intelligent logistics platform that automates shipment execution for freight forwarders and customs brokers across the entire lifecycle — operations, finance, customs, sales, visibility, and emissions reporting. Serves 60+ freight forwarders in 30+ countries, including 40% of the Top 25 Global Freight Forwarders. Processes 300,000+ shipments per month with 10,000+ users.",
+      "function": "Supply Chain Execution / Freight Forwarding Automation",
+      "key_customers": [
+        "Navia Freight",
+        "ALS Customs Services",
+        "Masterpiece",
+        "Magnate Worldwide"
+      ],
+      "ai_approach": "Proprietary LLMs trained on 5 billion labelled data points across 100 million human-verified logistics documents. AI Agents automate end-to-end workflows managing sequencing, dependencies, and handoffs while adhering to business rules and compliance requirements. Unstructured data extraction from emails, PDFs, EDI, and spreadsheets into standardized formats."
     }
   ],
   "learning_resources": [
