@@ -8,6 +8,7 @@ const columns = [
   { key: 'category', label: 'Category' },
   { key: 'name', label: 'Tool' },
   { key: 'pricing_model', label: 'Pricing' },
+  { key: 'is_featured', label: 'Featured', render: (v: boolean) => v ? '***' : '' },
   { key: 'url', label: 'URL', render: (v: string) => v ? <a href={v} target="_blank" rel="noopener" className="text-blue-400 hover:underline truncate block max-w-[200px]">{v}</a> : '—' },
 ];
 
@@ -23,6 +24,10 @@ const fields = [
   { key: 'description', label: 'Description', type: 'textarea' as const },
   { key: 'supply_chain_relevance', label: 'Supply Chain Relevance', type: 'textarea' as const },
   { key: 'pricing_model', label: 'Pricing Model', type: 'text' as const, placeholder: 'Free tier, Enterprise, etc.' },
+  { key: 'affiliate_url', label: 'Affiliate URL', type: 'url' as const, placeholder: 'https://tool.com/?ref=aischub' },
+  { key: 'is_featured', label: 'Featured', type: 'checkbox' as const, placeholder: 'Show as featured/sponsored' },
+  { key: 'featured_priority', label: 'Featured Priority', type: 'number' as const, placeholder: '0 = lowest, 100 = highest' },
+  { key: 'sponsor_label', label: 'Sponsor Label', type: 'text' as const, placeholder: 'Sponsored by X (optional)' },
 ];
 
 export default function AdminToolsPage() {

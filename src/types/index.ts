@@ -77,6 +77,52 @@ export interface InspirationData {
   };
 }
 
+// Monetization types
+export interface MonetizationFields {
+  id: string;
+  affiliate_url?: string | null;
+  is_featured?: boolean;
+  featured_priority?: number;
+  sponsor_label?: string | null;
+}
+
+export interface AdPlacement {
+  id: string;
+  slot_name: string;
+  title: string;
+  image_url: string | null;
+  destination_url: string;
+  is_active: boolean;
+  starts_at: string | null;
+  ends_at: string | null;
+  impressions: number;
+  clicks: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface LinkClick {
+  id: string;
+  resource_type: 'tool' | 'platform';
+  resource_id: string;
+  resource_name: string | null;
+  click_type: 'outbound' | 'affiliate';
+  referrer_path: string | null;
+  created_at: string;
+}
+
+export interface UserProfile {
+  id: string;
+  display_name: string | null;
+  company: string | null;
+  role: string | null;
+  tier: 'free' | 'pro';
+  saved_resources: string[];
+  assessment_results: Record<string, any>;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface ResourceData {
   metadata: {
     title: string;

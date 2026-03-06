@@ -42,10 +42,21 @@ export async function POST(request: NextRequest) {
     { field: 'funding', type: 'string', maxLength: 200 },
     { field: 'ai_approach', type: 'string', maxLength: 5000 },
     { field: 'key_customers', type: 'array' },
+    { field: 'affiliate_url', type: 'url', maxLength: 2000 },
+    { field: 'is_featured', type: 'boolean' },
+    { field: 'featured_priority', type: 'number' },
+    { field: 'sponsor_label', type: 'string', maxLength: 200 },
   ]);
   if (validationError) return NextResponse.json({ error: validationError }, { status: 400 });
 
-  const safe = { name: body.name, function_area: body.function_area, url: body.url || '', description: body.description || '', founded: body.founded || '', funding: body.funding || '', ai_approach: body.ai_approach || '', key_customers: Array.isArray(body.key_customers) ? body.key_customers.slice(0, 50) : [] };
+  const safe = {
+    name: body.name, function_area: body.function_area, url: body.url || '', description: body.description || '',
+    founded: body.founded || '', funding: body.funding || '', ai_approach: body.ai_approach || '',
+    key_customers: Array.isArray(body.key_customers) ? body.key_customers.slice(0, 50) : [],
+    affiliate_url: body.affiliate_url || null, is_featured: !!body.is_featured,
+    featured_priority: typeof body.featured_priority === 'number' ? body.featured_priority : 0,
+    sponsor_label: body.sponsor_label || null,
+  };
 
   const supabase = createAdminClient();
   const { data, error } = await supabase.from('platforms').insert(safe).select().single();

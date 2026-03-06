@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 interface Field {
   key: string;
   label: string;
-  type: 'text' | 'textarea' | 'url' | 'select' | 'array';
+  type: 'text' | 'textarea' | 'url' | 'select' | 'array' | 'checkbox' | 'number';
   required?: boolean;
   options?: string[];
   placeholder?: string;
@@ -30,7 +30,7 @@ export default function ResourceForm({ fields, initialValues, onSubmit, onCancel
     } else {
       const defaults: Record<string, any> = {};
       fields.forEach((f) => {
-        defaults[f.key] = f.type === 'array' ? [] : '';
+        defaults[f.key] = f.type === 'array' ? [] : f.type === 'checkbox' ? false : f.type === 'number' ? 0 : '';
       });
       setValues(defaults);
     }
@@ -96,6 +96,24 @@ export default function ResourceForm({ fields, initialValues, onSubmit, onCancel
                     <option key={opt} value={opt}>{opt}</option>
                   ))}
                 </select>
+              ) : field.type === 'checkbox' ? (
+                <label className="flex items-center gap-2 cursor-pointer mt-1">
+                  <input
+                    type="checkbox"
+                    checked={!!values[field.key]}
+                    onChange={(e) => updateField(field.key, e.target.checked)}
+                    className="w-4 h-4 rounded border-slate-600 bg-[#0a0e1a] text-blue-500 focus:ring-blue-500/50"
+                  />
+                  <span className="text-sm text-slate-300">{field.placeholder || 'Enabled'}</span>
+                </label>
+              ) : field.type === 'number' ? (
+                <input
+                  type="number"
+                  value={values[field.key] ?? 0}
+                  onChange={(e) => updateField(field.key, parseInt(e.target.value) || 0)}
+                  className="w-full px-3 py-2 bg-[#0a0e1a] border border-slate-600 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
+                  placeholder={field.placeholder}
+                />
               ) : field.type === 'array' ? (
                 <input
                   value={Array.isArray(values[field.key]) ? values[field.key].join(', ') : values[field.key] || ''}

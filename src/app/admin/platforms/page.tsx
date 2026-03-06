@@ -8,6 +8,7 @@ const columns = [
   { key: 'name', label: 'Platform' },
   { key: 'function_area', label: 'Focus Area' },
   { key: 'funding', label: 'Funding' },
+  { key: 'is_featured', label: 'Featured', render: (v: boolean) => v ? '⭐' : '' },
   { key: 'key_customers', label: 'Customers' },
 ];
 
@@ -25,6 +26,10 @@ const fields = [
   { key: 'description', label: 'Description', type: 'textarea' as const },
   { key: 'key_customers', label: 'Key Customers', type: 'array' as const, placeholder: 'Company1, Company2' },
   { key: 'ai_approach', label: 'AI Approach', type: 'textarea' as const },
+  { key: 'affiliate_url', label: 'Affiliate URL', type: 'url' as const, placeholder: 'https://platform.com/?ref=aischub' },
+  { key: 'is_featured', label: 'Featured', type: 'checkbox' as const, placeholder: 'Show as featured/sponsored' },
+  { key: 'featured_priority', label: 'Featured Priority', type: 'number' as const, placeholder: '0 = lowest, 100 = highest' },
+  { key: 'sponsor_label', label: 'Sponsor Label', type: 'text' as const, placeholder: 'Sponsored by X (optional)' },
 ];
 
 export default function AdminPlatformsPage() {

@@ -100,7 +100,7 @@ export function rateLimit(
  */
 export function validateFields(
   body: Record<string, any>,
-  rules: { field: string; required?: boolean; maxLength?: number; type?: 'string' | 'array' | 'url' }[]
+  rules: { field: string; required?: boolean; maxLength?: number; type?: 'string' | 'array' | 'url' | 'boolean' | 'number' }[]
 ): string | null {
   for (const rule of rules) {
     const value = body[rule.field];
@@ -112,6 +112,14 @@ export function validateFields(
     if (value !== undefined && value !== null) {
       if (rule.type === 'string' && typeof value !== 'string') {
         return `${rule.field} must be a string`;
+      }
+
+      if (rule.type === 'boolean' && typeof value !== 'boolean') {
+        return `${rule.field} must be a boolean`;
+      }
+
+      if (rule.type === 'number' && typeof value !== 'number') {
+        return `${rule.field} must be a number`;
       }
 
       if (rule.type === 'array') {

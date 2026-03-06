@@ -14,6 +14,8 @@ const navItems = [
   { href: '/admin/inspiration', label: 'Inspiration' },
   { href: '/admin/newsletter', label: 'Newsletter' },
   { href: '/admin/contact', label: 'Contact' },
+  { href: '/admin/ads', label: 'Ad Placements' },
+  { href: '/admin/revenue', label: 'Revenue' },
   { href: '/admin/analytics', label: 'Analytics' },
 ];
 

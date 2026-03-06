@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getArticleBySlug, getAllArticleSlugs, getAdjacentArticles, getArticleResourceTags } from '@/data/articles';
 import { platforms, generalTools, useCases } from '@/data/resources';
 import Badge from '@/components/Badge';
+import AdBanner from '@/components/AdBanner';
 
 const categoryColors: Record<string, 'blue' | 'green' | 'purple' | 'amber' | 'rose' | 'cyan'> = {
   Fundamentals: 'blue',
@@ -223,6 +224,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   </Link>
                 </div>
               )}
+
+              {/* Sponsored Ad */}
+              <AdBanner slot="blog-sidebar" />
 
               {/* Quick Actions */}
               <div className="rounded-xl border border-white/10 bg-gradient-to-br from-electric-500/5 to-emerald-500/5 p-4">

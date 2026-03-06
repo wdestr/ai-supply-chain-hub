@@ -4,6 +4,7 @@ import { getAllArticles } from '@/data/articles';
 import Card from '@/components/Card';
 import Badge from '@/components/Badge';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import AdBanner from '@/components/AdBanner';
 
 const stats = getStats();
 const articles = getAllArticles();
@@ -182,6 +183,11 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Ad Slot */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <AdBanner slot="homepage-mid" />
+      </div>
 
       {/* Featured Platforms */}
       <section className="border-t border-white/5 bg-navy-900/30">

@@ -40,10 +40,20 @@ export async function POST(request: NextRequest) {
     { field: 'description', type: 'string', maxLength: 5000 },
     { field: 'supply_chain_relevance', type: 'string', maxLength: 5000 },
     { field: 'pricing_model', type: 'string', maxLength: 500 },
+    { field: 'affiliate_url', type: 'url', maxLength: 2000 },
+    { field: 'is_featured', type: 'boolean' },
+    { field: 'featured_priority', type: 'number' },
+    { field: 'sponsor_label', type: 'string', maxLength: 200 },
   ]);
   if (validationError) return NextResponse.json({ error: validationError }, { status: 400 });
 
-  const safe = { category: body.category, name: body.name, url: body.url || '', description: body.description || '', supply_chain_relevance: body.supply_chain_relevance || '', pricing_model: body.pricing_model || '' };
+  const safe = {
+    category: body.category, name: body.name, url: body.url || '', description: body.description || '',
+    supply_chain_relevance: body.supply_chain_relevance || '', pricing_model: body.pricing_model || '',
+    affiliate_url: body.affiliate_url || null, is_featured: !!body.is_featured,
+    featured_priority: typeof body.featured_priority === 'number' ? body.featured_priority : 0,
+    sponsor_label: body.sponsor_label || null,
+  };
 
   const supabase = createAdminClient();
   const { data, error } = await supabase.from('tools').insert(safe).select().single();
