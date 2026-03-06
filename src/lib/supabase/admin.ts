@@ -7,7 +7,7 @@ export function createAdminClient() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
   if (!url || !key || url.includes('your_') || !url.startsWith('http')) {
-    return createClient('https://placeholder.supabase.co', 'placeholder-key');
+    throw new Error('Supabase admin client is not configured. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.');
   }
 
   return createClient(url, key);

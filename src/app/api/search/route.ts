@@ -23,26 +23,31 @@ export async function GET(request: NextRequest) {
     supabase
       .from('use_cases')
       .select('id, name, function_area, description')
+      .eq('status', 'published')
       .textSearch('fts', searchTerm, { type: 'websearch' })
       .limit(10),
     supabase
       .from('tools')
       .select('id, name, category, description')
+      .eq('status', 'published')
       .textSearch('fts', searchTerm, { type: 'websearch' })
       .limit(10),
     supabase
       .from('platforms')
       .select('id, name, function_area, description')
+      .eq('status', 'published')
       .textSearch('fts', searchTerm, { type: 'websearch' })
       .limit(10),
     supabase
       .from('learning_resources')
       .select('id, name, type, description')
+      .eq('status', 'published')
       .textSearch('fts', searchTerm, { type: 'websearch' })
       .limit(10),
     supabase
       .from('inspiration_projects')
       .select('id, project_name, category, description')
+      .eq('status', 'published')
       .textSearch('fts', searchTerm, { type: 'websearch' })
       .limit(10),
   ]);

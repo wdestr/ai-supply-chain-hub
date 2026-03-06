@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/admin';
-import { requireAdmin, validateFields, safeError } from '@/lib/api-auth';
+import { requireAdmin, validateFields, safeError, rateLimit } from '@/lib/api-auth';
 
 export async function GET(request: NextRequest) {
+  const rateLimited = rateLimit(request, { maxRequests: 30, windowMs: 60_000 });
+  if (rateLimited) return rateLimited;
+
   const supabase = createAdminClient();
   const { searchParams } = request.nextUrl;
 
@@ -20,6 +23,7 @@ export async function GET(request: NextRequest) {
   let query = supabase
     .from('learning_resources')
     .select('*', { count: 'exact' })
+    .eq('status', 'published')
     .order('type')
     .range(offset, offset + limit - 1);
 

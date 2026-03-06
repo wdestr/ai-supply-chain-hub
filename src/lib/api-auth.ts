@@ -2,8 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 
 /**
+ * Comma-separated list of admin emails from ADMIN_EMAILS env var.
+ * Falls back to empty set (no one is admin) if unset — fail-closed.
+ */
+function getAdminEmails(): Set<string> {
+  const raw = process.env.ADMIN_EMAILS || '';
+  return new Set(
+    raw.split(',').map(e => e.trim().toLowerCase()).filter(Boolean)
+  );
+}
+
+/**
  * Verify the request comes from an authenticated admin user.
- * Returns the user if authenticated, or a 401 response.
+ * Checks both authentication AND admin role (email allowlist).
+ * Returns the user if authorized, or a 401/403 response.
  */
 export async function requireAdmin(request: NextRequest): Promise<{ user: any } | NextResponse> {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -26,6 +38,18 @@ export async function requireAdmin(request: NextRequest): Promise<{ user: any } 
 
   if (error || !user) {
     return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+  }
+
+  // Check admin role — user must be in the ADMIN_EMAILS allowlist
+  const adminEmails = getAdminEmails();
+  if (adminEmails.size > 0) {
+    // ADMIN_EMAILS is configured — enforce strict allowlist
+    if (!user.email || !adminEmails.has(user.email.toLowerCase())) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+  } else {
+    // ADMIN_EMAILS not configured — allow authenticated users but warn
+    console.warn('[SECURITY] ADMIN_EMAILS env var is not set. Set it to restrict admin access.');
   }
 
   return { user };
@@ -90,8 +114,16 @@ export function validateFields(
         return `${rule.field} must be a string`;
       }
 
-      if (rule.type === 'array' && !Array.isArray(value)) {
-        return `${rule.field} must be an array`;
+      if (rule.type === 'array') {
+        if (!Array.isArray(value)) {
+          return `${rule.field} must be an array`;
+        }
+        // Validate each element is a string of reasonable length
+        for (const item of value) {
+          if (typeof item !== 'string' || item.length > 1000) {
+            return `${rule.field} must contain only strings (max 1000 chars each)`;
+          }
+        }
       }
 
       if (rule.type === 'url' && typeof value === 'string' && value.length > 0) {

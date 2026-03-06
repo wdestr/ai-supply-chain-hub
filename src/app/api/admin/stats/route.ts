@@ -18,6 +18,11 @@ export async function GET(request: NextRequest) {
     contacts,
     recentViews,
     totalViews,
+    draftUseCases,
+    draftTools,
+    draftPlatforms,
+    draftLearning,
+    draftInspiration,
   ] = await Promise.all([
     supabase.from('use_cases').select('*', { count: 'exact', head: true }),
     supabase.from('tools').select('*', { count: 'exact', head: true }),
@@ -33,10 +38,15 @@ export async function GET(request: NextRequest) {
       .order('created_at', { ascending: false })
       .limit(20),
     supabase.from('page_views').select('*', { count: 'exact', head: true }),
+    supabase.from('use_cases').select('*', { count: 'exact', head: true }).eq('status', 'draft'),
+    supabase.from('tools').select('*', { count: 'exact', head: true }).eq('status', 'draft'),
+    supabase.from('platforms').select('*', { count: 'exact', head: true }).eq('status', 'draft'),
+    supabase.from('learning_resources').select('*', { count: 'exact', head: true }).eq('status', 'draft'),
+    supabase.from('inspiration_projects').select('*', { count: 'exact', head: true }).eq('status', 'draft'),
   ]);
 
   // Check for any query errors
-  const anyError = [useCases, tools, platforms, learning, inspiration, subscribers, contacts, recentViews, totalViews].some(r => r.error);
+  const anyError = [useCases, tools, platforms, learning, inspiration, subscribers, contacts, recentViews, totalViews, draftUseCases, draftTools, draftPlatforms, draftLearning, draftInspiration].some(r => r.error);
   if (anyError) return safeError();
 
   // Top pages (last 7 days)
@@ -54,6 +64,7 @@ export async function GET(request: NextRequest) {
       inspiration_projects: inspiration.count || 0,
       total: (useCases.count || 0) + (tools.count || 0) + (platforms.count || 0) + (learning.count || 0) + (inspiration.count || 0),
     },
+    pending_drafts: (draftUseCases.count || 0) + (draftTools.count || 0) + (draftPlatforms.count || 0) + (draftLearning.count || 0) + (draftInspiration.count || 0),
     newsletter_subscribers: subscribers.count || 0,
     unread_contacts: contacts.count || 0,
     total_page_views: totalViews.count || 0,

@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/admin';
-import { requireAdmin, validateFields, safeError } from '@/lib/api-auth';
+import { requireAdmin, validateFields, safeError, rateLimit } from '@/lib/api-auth';
 
 export async function GET(request: NextRequest) {
+  const rateLimited = rateLimit(request, { maxRequests: 30, windowMs: 60_000 });
+  if (rateLimited) return rateLimited;
+
   const supabase = createAdminClient();
   const { searchParams } = request.nextUrl;
 
@@ -13,7 +16,7 @@ export async function GET(request: NextRequest) {
 
   if (search && search.length > 500) return NextResponse.json({ error: 'Search query too long' }, { status: 400 });
 
-  let query = supabase.from('platforms').select('*', { count: 'exact' }).order('name').range(offset, offset + limit - 1);
+  let query = supabase.from('platforms').select('*', { count: 'exact' }).eq('status', 'published').order('name').range(offset, offset + limit - 1);
   if (functionArea) query = query.eq('function_area', functionArea);
   if (search) query = query.textSearch('fts', search, { type: 'websearch' });
 

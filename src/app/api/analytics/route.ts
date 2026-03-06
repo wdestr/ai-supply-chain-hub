@@ -12,16 +12,19 @@ export async function POST(request: NextRequest) {
   const path = typeof body.path === 'string' ? body.path.trim().slice(0, 500) : '';
   const referrer = typeof body.referrer === 'string' ? body.referrer.trim().slice(0, 2000) : null;
 
-  if (!path) {
-    return NextResponse.json({ error: 'Path is required' }, { status: 400 });
+  // Validate path is a relative path starting with /
+  if (!path || !path.startsWith('/')) {
+    return NextResponse.json({ error: 'Path is required and must start with /' }, { status: 400 });
   }
 
   const supabase = createAdminClient();
-  // Fire and forget — don't block the response
+  // Fire and forget — log errors but don't block the response
   supabase
     .from('page_views')
     .insert({ path, referrer })
-    .then(() => {});
+    .then(({ error }) => {
+      if (error) console.error('Analytics insert failed:', error.message);
+    });
 
   return NextResponse.json({ ok: true });
 }

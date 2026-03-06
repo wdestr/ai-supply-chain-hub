@@ -157,3 +157,46 @@ CREATE POLICY "Public insert" ON contact_submissions FOR INSERT WITH CHECK (true
 
 -- Admin-only write access for resource tables (via service role key, bypasses RLS)
 -- No explicit write policies needed; the service role key skips RLS.
+
+-- Content automation: status + provenance columns
+ALTER TABLE use_cases ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'published' NOT NULL;
+ALTER TABLE use_cases ADD COLUMN IF NOT EXISTS source_url TEXT;
+ALTER TABLE use_cases ADD COLUMN IF NOT EXISTS discovered_by TEXT;
+
+ALTER TABLE tools ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'published' NOT NULL;
+ALTER TABLE tools ADD COLUMN IF NOT EXISTS source_url TEXT;
+ALTER TABLE tools ADD COLUMN IF NOT EXISTS discovered_by TEXT;
+
+ALTER TABLE platforms ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'published' NOT NULL;
+ALTER TABLE platforms ADD COLUMN IF NOT EXISTS source_url TEXT;
+ALTER TABLE platforms ADD COLUMN IF NOT EXISTS discovered_by TEXT;
+
+ALTER TABLE learning_resources ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'published' NOT NULL;
+ALTER TABLE learning_resources ADD COLUMN IF NOT EXISTS source_url TEXT;
+ALTER TABLE learning_resources ADD COLUMN IF NOT EXISTS discovered_by TEXT;
+
+ALTER TABLE inspiration_projects ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'published' NOT NULL;
+ALTER TABLE inspiration_projects ADD COLUMN IF NOT EXISTS source_url TEXT;
+ALTER TABLE inspiration_projects ADD COLUMN IF NOT EXISTS discovered_by TEXT;
+
+CREATE INDEX IF NOT EXISTS idx_use_cases_status ON use_cases(status);
+CREATE INDEX IF NOT EXISTS idx_tools_status ON tools(status);
+CREATE INDEX IF NOT EXISTS idx_platforms_status ON platforms(status);
+CREATE INDEX IF NOT EXISTS idx_learning_status ON learning_resources(status);
+CREATE INDEX IF NOT EXISTS idx_inspiration_status ON inspiration_projects(status);
+
+-- Content discovery run log
+CREATE TABLE IF NOT EXISTS content_discovery_runs (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  started_at TIMESTAMPTZ DEFAULT now(),
+  completed_at TIMESTAMPTZ,
+  status TEXT DEFAULT 'running',
+  sources_checked INTEGER DEFAULT 0,
+  items_discovered INTEGER DEFAULT 0,
+  items_inserted INTEGER DEFAULT 0,
+  items_skipped_duplicate INTEGER DEFAULT 0,
+  error_message TEXT,
+  summary JSONB DEFAULT '{}'::jsonb
+);
+
+ALTER TABLE content_discovery_runs ENABLE ROW LEVEL SECURITY;

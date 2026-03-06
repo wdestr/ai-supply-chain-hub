@@ -26,7 +26,11 @@ function LoginForm() {
       return;
     }
 
-    const redirect = searchParams.get('redirect') || '/admin';
+    // Prevent open redirect — only allow relative paths under /admin
+    let redirect = searchParams.get('redirect') || '/admin';
+    if (!redirect.startsWith('/') || redirect.startsWith('//') || redirect.includes('://')) {
+      redirect = '/admin';
+    }
     router.push(redirect);
     router.refresh();
   }
