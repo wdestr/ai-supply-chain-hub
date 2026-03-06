@@ -4433,6 +4433,16 @@
         "Magnate Worldwide"
       ],
       "ai_approach": "Proprietary LLMs trained on 5 billion labelled data points across 100 million human-verified logistics documents. AI Agents automate end-to-end workflows managing sequencing, dependencies, and handoffs while adhering to business rules and compliance requirements. Unstructured data extraction from emails, PDFs, EDI, and spreadsheets into standardized formats."
+    },
+    {
+      "name": "Wove",
+      "url": "https://www.wove.com",
+      "founded": "2021",
+      "funding": "Privately held",
+      "description": "AI copilot for logistics automation that eliminates manual data entry for freight forwarders, 3PLs, and warehouse operators. Flagship rate ingestion engine automatically parses and structures complex rate data from Excel and PDFs. Processes RFQs, shipment docs, carrier rates, AP invoices, customs entries, bills of lading, and packing lists. Deep native CargoWise integration. Achieves 90% reduction in processing time with near-perfect accuracy.",
+      "function": "Logistics Automation / Data Ingestion",
+      "key_customers": [],
+      "ai_approach": "AI-powered data ingestion engine with advanced OCR and document understanding for parsing logistics documents. Email copilot that automatically processes RFQs and operational communications. Warehouse order automation that extracts order details and syncs to WMS in under 30 seconds with validation layer for flagging errors before they reach the WMS."
     }
   ],
   "learning_resources": [
