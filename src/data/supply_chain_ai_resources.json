@@ -3,7 +3,7 @@
     "title": "AI in Supply Chain Resource Hub Database",
     "version": "3.0",
     "last_updated": "2025-02",
-    "total_resources": 473,
+    "total_resources": 475,
     "notes": "Resources verified through web research Feb 2025-Feb 2026. V3.0 added 30 use cases, 25 general tools, 25 platforms, and 30 learning resources covering emerging areas: autonomous planning, generative AI, digital twins, sustainability/carbon tracking, cold chain monitoring, pharma supply chain, food safety, fashion demand sensing, and autonomous delivery. Funding figures and customer lists are based on publicly available information and may not be current."
   },
   "use_cases": [
@@ -4365,6 +4365,29 @@
         "Gap"
       ],
       "ai_approach": "AI-orchestrated fleet of climbing robots with intelligent order batching, dynamic slotting, and real-time throughput optimization across 3D rack structures."
+    },
+    {
+      "name": "LuminX AI",
+      "url": "https://luminxai.com",
+      "founded": "2024",
+      "funding": "",
+      "description": "Computer vision-enabled hardware and software platform for warehouse inventory automation. Uses ruggedized, IP69-rated edge AI devices with 4x50MP cameras that can be dock-mounted, forklift-mounted, conveyor-mounted, or handheld. Performs real-time AI processing at the source for dock verification, inventory putaway, damage detection, dimensional analysis, barcode/QR reading, handwritten text recognition, case counting, and expiration date identification.",
+      "function": "Warehouse Computer Vision / Inventory Automation",
+      "key_customers": [
+        "Vertical Cold Storage",
+        "1 Commerce"
+      ],
+      "ai_approach": "Advanced computer vision algorithms with edge AI processing on low-cost ruggedized mobile hardware. Creates real-time digital twins of inventory and dock operations, integrating with WMS to identify discrepancies instantly. Supports multi-format data capture across challenging warehouse environments."
+    },
+    {
+      "name": "Tally (TallyGo)",
+      "url": "https://tallygo.ai",
+      "founded": "2025",
+      "funding": "",
+      "description": "AI-powered platform that connects contracts, systems, and finance operations to catch missed billables, reduce disputes, and accelerate cash flow in supply chain and logistics. Extracts commercial terms from SLAs, rate cards, and emails to automatically apply every billable service, ensuring no value-added service goes uncharged.",
+      "function": "Supply Chain Finance / Billing Automation",
+      "key_customers": [],
+      "ai_approach": "AI-driven extraction and matching of commercial terms from contracts, SLAs, rate cards, and unstructured communications. Automates billing reconciliation and dispute resolution across logistics and supply chain finance operations."
     }
   ],
   "learning_resources": [
