@@ -20,6 +20,7 @@ const moreLinks = [
   { href: '/roi-calculator', label: 'ROI Calc' },
   { href: '/glossary', label: 'Glossary' },
   { href: '/contact', label: 'Contact' },
+  { href: '/advertise', label: 'Advertise' },
 ];
 
 export default function Header() {

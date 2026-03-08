@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     '', '/use-cases', '/tools', '/platforms', '/learning', '/blog',
     '/assessment', '/roi-calculator', '/compare', '/glossary',
-    '/start-here', '/inspiration', '/contact',
+    '/start-here', '/inspiration', '/contact', '/advertise',
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
