@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import AdSenseUnit from '@/components/AdSenseUnit';
 
 interface AdBannerProps {
   slot: string;
@@ -18,6 +19,7 @@ interface Ad {
 
 export default function AdBanner({ slot, className = '' }: AdBannerProps) {
   const [ad, setAd] = useState<Ad | null>(null);
+  const [loaded, setLoaded] = useState(false);
   const pathname = usePathname();
   const tracked = useRef(false);
 
@@ -50,39 +52,48 @@ export default function AdBanner({ slot, className = '' }: AdBannerProps) {
           }).catch(() => {});
         }
       }
+      setLoaded(true);
     }
 
     fetchAd();
   }, [slot, pathname]);
 
-  if (!ad) return null;
+  // Show custom Supabase-managed ad (sold directly)
+  if (ad) {
+    function handleClick() {
+      if (!ad) return;
+      fetch('/api/ad-event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ad_id: ad.id, event_type: 'click', referrer_path: pathname }),
+      }).catch(() => {});
+    }
 
-  function handleClick() {
-    if (!ad) return;
-    fetch('/api/ad-event', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ad_id: ad.id, event_type: 'click', referrer_path: pathname }),
-    }).catch(() => {});
+    return (
+      <div className={`rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden ${className}`}>
+        <a
+          href={ad.destination_url}
+          target="_blank"
+          rel="noopener sponsored"
+          onClick={handleClick}
+          className="block"
+        >
+          {ad.image_url && (
+            <img src={ad.image_url} alt={ad.title} className="w-full object-cover" loading="lazy" />
+          )}
+          <div className="p-3">
+            <p className="text-sm font-medium text-white">{ad.title}</p>
+            <p className="text-[10px] uppercase tracking-wider text-slate-500 mt-1">Sponsored</p>
+          </div>
+        </a>
+      </div>
+    );
   }
 
-  return (
-    <div className={`rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden ${className}`}>
-      <a
-        href={ad.destination_url}
-        target="_blank"
-        rel="noopener sponsored"
-        onClick={handleClick}
-        className="block"
-      >
-        {ad.image_url && (
-          <img src={ad.image_url} alt={ad.title} className="w-full object-cover" loading="lazy" />
-        )}
-        <div className="p-3">
-          <p className="text-sm font-medium text-white">{ad.title}</p>
-          <p className="text-[10px] uppercase tracking-wider text-slate-500 mt-1">Sponsored</p>
-        </div>
-      </a>
-    </div>
-  );
+  // Fallback: Google AdSense unit (when no direct ad is sold for this slot)
+  if (loaded) {
+    return <AdSenseUnit slotName={slot} className={className} />;
+  }
+
+  return null;
 }
