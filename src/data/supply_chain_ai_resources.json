@@ -4394,7 +4394,7 @@
       "url": "https://www.wisetechglobal.com",
       "founded": "1994",
       "funding": "Public (ASX:WTC), ~$21B+ market cap",
-      "description": "Leading developer of logistics execution software. Flagship product CargoWise is a cloud-based platform that unifies end-to-end supply chain operations — freight forwarding, customs compliance, warehousing, transport, and e-commerce — on a single system. Used by 17,000+ logistics providers globally, including 46 of the top 50 logistics providers and 24 of the top 25 freight forwarders.",
+      "description": "Leading developer of logistics execution software. Flagship product CargoWise is a cloud-based platform that unifies end-to-end supply chain operations \u2014 freight forwarding, customs compliance, warehousing, transport, and e-commerce \u2014 on a single system. Used by 17,000+ logistics providers globally, including 46 of the top 50 logistics providers and 24 of the top 25 freight forwarders.",
       "function": "Logistics Execution / Freight Forwarding Software",
       "key_customers": [
         "DHL",
@@ -4424,7 +4424,7 @@
       "url": "https://www.raft.ai",
       "founded": "2017",
       "funding": "$46.7M raised (Series B led by Eight Roads, 2023)",
-      "description": "Intelligent logistics platform that automates shipment execution for freight forwarders and customs brokers across the entire lifecycle — operations, finance, customs, sales, visibility, and emissions reporting. Serves 60+ freight forwarders in 30+ countries, including 40% of the Top 25 Global Freight Forwarders. Processes 300,000+ shipments per month with 10,000+ users.",
+      "description": "Intelligent logistics platform that automates shipment execution for freight forwarders and customs brokers across the entire lifecycle \u2014 operations, finance, customs, sales, visibility, and emissions reporting. Serves 60+ freight forwarders in 30+ countries, including 40% of the Top 25 Global Freight Forwarders. Processes 300,000+ shipments per month with 10,000+ users.",
       "function": "Supply Chain Execution / Freight Forwarding Automation",
       "key_customers": [
         "Navia Freight",
@@ -4561,7 +4561,7 @@
     {
       "type": "book",
       "name": "AI-Enabled Analytics for Business: A Roadmap for Becoming an Analytics-Driven Organization",
-      "url": "https://www.amazon.com/dp/1119736137",
+      "url": "https://www.amazon.com/dp/1119736137?tag=strahaw26-20",
       "description": "Practical guide to implementing AI/analytics in business contexts. Applicable frameworks for supply chain analytics initiatives.",
       "cost": "paid",
       "level": "intermediate"
@@ -4569,7 +4569,7 @@
     {
       "type": "book",
       "name": "Supply Chain Management Best Practices (3rd Edition) by David Blanchard",
-      "url": "https://www.amazon.com/dp/1119855047",
+      "url": "https://www.amazon.com/dp/1119855047?tag=strahaw26-20",
       "description": "Updated edition covering modern supply chain practices including AI and digital transformation topics.",
       "cost": "paid",
       "level": "intermediate"
@@ -4577,7 +4577,7 @@
     {
       "type": "book",
       "name": "Co-Intelligence: Living and Working with AI by Ethan Mollick",
-      "url": "https://www.amazon.com/dp/059371671X",
+      "url": "https://www.amazon.com/dp/059371671X?tag=strahaw26-20",
       "description": "Practical guide to working with AI from Wharton professor. Excellent for supply chain leaders understanding how to integrate AI into daily workflows.",
       "cost": "paid",
       "level": "beginner"
@@ -4585,7 +4585,7 @@
     {
       "type": "book",
       "name": "Prediction Machines: The Simple Economics of Artificial Intelligence",
-      "url": "https://www.amazon.com/dp/1633695670",
+      "url": "https://www.amazon.com/dp/1633695670?tag=strahaw26-20",
       "description": "Frameworks for understanding AI as a prediction tool and how to build business cases around it\u2014directly applicable to supply chain forecasting investments.",
       "cost": "paid",
       "level": "beginner"
@@ -4889,7 +4889,7 @@
     {
       "type": "book",
       "name": "The New (Ab)Normal: Reshaping Business and Supply Chain Strategy Beyond Covid-19",
-      "url": "https://www.amazon.com/dp/B08FDLMXLJ",
+      "url": "https://www.amazon.com/dp/B08FDLMXLJ?tag=strahaw26-20",
       "description": "By Yossi Sheffi (MIT). Covers supply chain resilience, digital transformation, and technology adoption lessons from global disruption.",
       "cost": "paid",
       "level": "intermediate"
@@ -4897,7 +4897,7 @@
     {
       "type": "book",
       "name": "Supply Chain Management: Strategy, Planning, and Operation (8th Edition)",
-      "url": "https://www.amazon.com/dp/0137502842",
+      "url": "https://www.amazon.com/dp/0137502842?tag=strahaw26-20",
       "description": "By Sunil Chopra. Definitive supply chain textbook updated with coverage of AI, analytics, and digital technologies in modern supply chains.",
       "cost": "paid",
       "level": "intermediate"
@@ -4921,7 +4921,7 @@
     {
       "type": "book",
       "name": "Logistics 4.0: Digital Transformation of Supply Chain Management",
-      "url": "https://www.amazon.com/dp/1032064366",
+      "url": "https://www.amazon.com/dp/1032064366?tag=strahaw26-20",
       "description": "Covers digital transformation of logistics and supply chains including AI, IoT, blockchain, and robotics applications with industry case studies.",
       "cost": "paid",
       "level": "intermediate"
@@ -4929,7 +4929,7 @@
     {
       "type": "book",
       "name": "Data Science for Supply Chain Forecasting",
-      "url": "https://www.amazon.com/dp/3110671107",
+      "url": "https://www.amazon.com/dp/3110671107?tag=strahaw26-20",
       "description": "By Nicolas Vandeput. Practical guide to applying data science techniques to supply chain forecasting with Python code examples and real-world datasets.",
       "cost": "paid",
       "level": "intermediate"
@@ -4937,7 +4937,7 @@
     {
       "type": "book",
       "name": "Lean Supply Chain and Logistics Innovations",
-      "url": "https://www.amazon.com/dp/0367708825",
+      "url": "https://www.amazon.com/dp/0367708825?tag=strahaw26-20",
       "description": "Covers lean principles applied to modern digital supply chains including AI-powered process optimization and continuous improvement.",
       "cost": "paid",
       "level": "intermediate"
@@ -5281,7 +5281,7 @@
     {
       "type": "book",
       "name": "Supply Chain Optimization, Management and Integration: Emerging Applications by John Wang",
-      "url": "https://www.amazon.com/dp/1609601963",
+      "url": "https://www.amazon.com/dp/1609601963?tag=strahaw26-20",
       "description": "Comprehensive reference covering quantitative methods for supply chain optimization including simulation, mathematical programming, and emerging AI techniques.",
       "cost": "paid",
       "level": "advanced"
@@ -5289,7 +5289,7 @@
     {
       "type": "book",
       "name": "The Goal: A Process of Ongoing Improvement by Eliyahu M. Goldratt",
-      "url": "https://www.amazon.com/dp/0884271951",
+      "url": "https://www.amazon.com/dp/0884271951?tag=strahaw26-20",
       "description": "Classic operations management novel introducing Theory of Constraints. Essential reading for understanding bottleneck analysis before applying AI optimization methods.",
       "cost": "paid",
       "level": "beginner"
@@ -5297,7 +5297,7 @@
     {
       "type": "book",
       "name": "Demand-Driven Adaptive Enterprise by Carol Ptak and Chad Smith",
-      "url": "https://www.amazon.com/dp/0831136030",
+      "url": "https://www.amazon.com/dp/0831136030?tag=strahaw26-20",
       "description": "Introduces the Demand Driven Adaptive Enterprise model combining demand-driven MRP with adaptive supply chain sensing, providing frameworks that complement AI-driven planning approaches.",
       "cost": "paid",
       "level": "intermediate"
@@ -5305,7 +5305,7 @@
     {
       "type": "book",
       "name": "Inventory Optimization: Models and Simulations by Nicolas Vandeput",
-      "url": "https://www.amazon.com/dp/3110673916",
+      "url": "https://www.amazon.com/dp/3110673916?tag=strahaw26-20",
       "description": "Practical guide to inventory optimization techniques using Python with coverage of safety stock, service level optimization, and simulation-based methods for supply chain practitioners.",
       "cost": "paid",
       "level": "intermediate"
