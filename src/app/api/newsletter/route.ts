@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Valid email is required' }, { status: 400 });
   }
 
+  // 1. Save to Supabase (always)
   const supabase = createAdminClient();
   const { error } = await supabase
     .from('newsletter_subscribers')
@@ -25,6 +26,31 @@ export async function POST(request: NextRequest) {
 
   if (error) {
     return NextResponse.json({ error: 'Failed to subscribe' }, { status: 500 });
+  }
+
+  // 2. Forward to Beehiiv API if credentials are configured
+  const beehiivKey = process.env.BEEHIIV_API_KEY;
+  const beehiivPubId = process.env.BEEHIIV_PUBLICATION_ID;
+
+  if (beehiivKey && beehiivPubId) {
+    try {
+      await fetch(`https://api.beehiiv.com/v2/publications/${beehiivPubId}/subscriptions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${beehiivKey}`,
+        },
+        body: JSON.stringify({
+          email,
+          reactivate_existing: false,
+          send_welcome_email: true,
+          utm_source: 'aischub',
+          utm_medium: 'website',
+        }),
+      });
+    } catch {
+      // Non-fatal — subscriber is already saved to Supabase
+    }
   }
 
   return NextResponse.json({ message: 'Subscribed successfully' });

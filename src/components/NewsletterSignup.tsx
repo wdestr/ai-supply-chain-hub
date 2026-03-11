@@ -16,18 +16,10 @@ export default function NewsletterSignup({ variant = 'card', className = '' }: P
     if (!email) return;
     setStatus('loading');
     try {
-      // Beehiiv embed form — replace PUBLICATION_ID with actual ID after signup
-      const res = await fetch('https://www.beehiiv.com/subscribe', {
+      const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          publication_id: process.env.NEXT_PUBLIC_BEEHIIV_PUBLICATION_ID || 'pub_placeholder',
-          reactivate_existing: false,
-          send_welcome_email: true,
-          utm_source: 'aischub',
-          utm_medium: 'website',
-        }),
+        body: JSON.stringify({ email }),
       });
       if (res.ok) {
         setStatus('success');
