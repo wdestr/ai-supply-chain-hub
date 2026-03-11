@@ -66,6 +66,30 @@ export function getLearningTypes(): string[] {
   return [...new Set(learningResources.map(r => r.type))];
 }
 
+// Slug helpers
+export function nameToSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+export function getToolBySlug(slug: string): GeneralTool | undefined {
+  return generalTools.find((t) => nameToSlug(t.name) === slug);
+}
+
+export function getPlatformBySlug(slug: string): Platform | undefined {
+  return platforms.find((p) => nameToSlug(p.name) === slug);
+}
+
+export function getAllToolSlugs(): string[] {
+  return generalTools.map((t) => nameToSlug(t.name));
+}
+
+export function getAllPlatformSlugs(): string[] {
+  return platforms.map((p) => nameToSlug(p.name));
+}
+
 // Stats
 export function getStats() {
   return {

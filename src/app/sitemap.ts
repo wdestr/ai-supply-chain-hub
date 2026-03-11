@@ -1,14 +1,17 @@
 import type { MetadataRoute } from 'next';
 import { getAllArticles } from '@/data/articles';
+import { getAllToolSlugs, getAllPlatformSlugs } from '@/data/resources';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aischub.com';
   const articles = getAllArticles();
+  const toolSlugs = getAllToolSlugs();
+  const platformSlugs = getAllPlatformSlugs();
 
   const staticPages = [
     '', '/use-cases', '/tools', '/platforms', '/learning', '/blog',
     '/assessment', '/roi-calculator', '/compare', '/glossary',
-    '/start-here', '/inspiration', '/contact', '/advertise',
+    '/start-here', '/inspiration', '/contact', '/advertise', '/submit',
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
@@ -25,5 +28,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...articleEntries];
+  const toolEntries: MetadataRoute.Sitemap = toolSlugs.map((slug) => ({
+    url: `${baseUrl}/tools/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  const platformEntries: MetadataRoute.Sitemap = platformSlugs.map((slug) => ({
+    url: `${baseUrl}/platforms/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...articleEntries, ...toolEntries, ...platformEntries];
 }

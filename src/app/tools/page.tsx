@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { generalTools, getToolCategories, getToolsByCategory } from '@/data/resources';
+import Link from 'next/link';
+import { generalTools, getToolCategories, getToolsByCategory, nameToSlug } from '@/data/resources';
 import { fetchMonetizationData } from '@/lib/monetization';
 import type { MonetizationFields } from '@/types';
 import Hero from '@/components/Hero';
@@ -110,7 +111,9 @@ export default function ToolsPage() {
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-2">
-                        <h3 className="text-lg font-semibold text-white">{tool.name}</h3>
+                        <Link href={`/tools/${nameToSlug(tool.name)}`} className="text-lg font-semibold text-white hover:text-electric-400 transition-colors">
+                          {tool.name}
+                        </Link>
                         {isFeatured && (
                           <Badge label={m?.sponsor_label || 'Featured'} color="green" />
                         )}
@@ -118,6 +121,7 @@ export default function ToolsPage() {
                           <Badge label="Partner" color="amber" />
                         )}
                       </div>
+
                       <TrackedLink
                         href={tool.url}
                         affiliateHref={m?.affiliate_url}

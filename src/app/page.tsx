@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { getStats, useCases, platforms, contentOutlines } from '@/data/resources';
+import { getStats, useCases, platforms, generalTools, contentOutlines, nameToSlug } from '@/data/resources';
 import { getAllArticles } from '@/data/articles';
 import Card from '@/components/Card';
 import Badge from '@/components/Badge';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import AdBanner from '@/components/AdBanner';
+import NewsletterSignup from '@/components/NewsletterSignup';
 
 const stats = getStats();
 const articles = getAllArticles();
@@ -19,6 +20,10 @@ const functionColors: Record<string, string> = {
   'Supply Chain Planning (S&OP/IBP)': 'violet',
   'Customer Service & Order Management': 'slate',
 };
+
+// "Recently added" = last items in each array (new entries are appended)
+const recentTools = generalTools.slice(-6).reverse();
+const recentPlatforms = platforms.slice(-4).reverse();
 
 export default function HomePage() {
   const featuredUseCases = useCases.slice(0, 6);
@@ -247,6 +252,75 @@ export default function HomePage() {
               </Card>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* What's New */}
+      <section className="border-t border-white/5 bg-navy-900/20">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-white">What&apos;s New</h2>
+              <p className="mt-2 text-slate-400">Recently added tools and platforms</p>
+            </div>
+            <div className="hidden sm:flex gap-4">
+              <Link href="/tools" className="text-sm font-medium text-electric-400 hover:text-electric-300">
+                All Tools &rarr;
+              </Link>
+              <Link href="/platforms" className="text-sm font-medium text-electric-400 hover:text-electric-300">
+                All Platforms &rarr;
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {/* Recent Tools */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">New Tools</h3>
+              <div className="space-y-3">
+                {recentTools.map((tool) => (
+                  <Link
+                    key={tool.name}
+                    href={`/tools/${nameToSlug(tool.name)}`}
+                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 hover:border-electric-500/30 hover:bg-white/[0.05] transition-all"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-white truncate">{tool.name}</div>
+                      <div className="mt-0.5 text-xs text-slate-400 line-clamp-1">{tool.description}</div>
+                    </div>
+                    <Badge label={tool.pricing_model} color="slate" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Recent Platforms */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">New Platforms</h3>
+              <div className="space-y-3">
+                {recentPlatforms.map((p) => (
+                  <Link
+                    key={p.name}
+                    href={`/platforms/${nameToSlug(p.name)}`}
+                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 hover:border-electric-500/30 hover:bg-white/[0.05] transition-all"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-white truncate">{p.name}</div>
+                      <div className="mt-0.5 text-xs text-slate-400 line-clamp-1">{p.function}</div>
+                    </div>
+                    <Badge label={p.funding.split('(')[0].trim().slice(0, 15)} color="green" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-xl">
+          <NewsletterSignup variant="card" />
         </div>
       </section>
 

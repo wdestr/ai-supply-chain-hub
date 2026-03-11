@@ -19,6 +19,8 @@ const moreLinks = [
   { href: '/assessment', label: 'Assessment' },
   { href: '/roi-calculator', label: 'ROI Calc' },
   { href: '/glossary', label: 'Glossary' },
+  { href: '/bookmarks', label: 'Saved' },
+  { href: '/submit', label: 'Submit a Tool' },
   { href: '/contact', label: 'Contact' },
   { href: '/advertise', label: 'Advertise' },
 ];
@@ -80,6 +82,15 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/bookmarks"
+            className="hidden items-center gap-1 rounded-lg px-2.5 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white lg:flex"
+            title="Saved resources"
+          >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+          </Link>
           <SearchButton />
 
           {/* Mobile hamburger */}
