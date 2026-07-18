@@ -1,0 +1,364 @@
+{
+  "sections": [
+    {
+      "section": "RFP and Bid Work",
+      "chapter": "4",
+      "prompts": [
+        {
+          "num": 1,
+          "title": "RFP requirement extraction",
+          "prompt": "Here is the full text of an RFP/bid package: [PASTE RFP TEXT]\n\nExtract every requirement, deadline, and submission rule into a numbered\nchecklist, organized under these headings: Submission Deadlines,\nRequired Documents/Forms, Rate/Pricing Format Requirements, Insurance\nand Compliance Requirements, Service-Level Requirements, and Anything\nUnusual or Easy to Miss. Quote the exact source sentence next to each\nitem so I can verify it against the original.",
+          "note": "run this before you write a word of response, and manually skim the RFP once yourself afterward \u2014 the \"quote the source sentence\" instruction is your check; if a line has no quote, don't trust it."
+        },
+        {
+          "num": 2,
+          "title": "Scope-gap hunt",
+          "prompt": "Here is an RFP scope of work: [PASTE SCOPE SECTION]\n\nHere is a list of services my company currently offers: [LIST YOUR\nSERVICES/CAPABILITIES]\n\nCompare the two. List every requirement in the scope that I do not\nclearly cover today, every requirement that's ambiguous about whether\nI cover it, and every requirement where the RFP's terminology doesn't\nmatch mine (so I know it's the same requirement, worded differently).",
+          "note": "this catches the \"wrong scope vocabulary\" trap from Chapter 4 \u2014 read every \"ambiguous\" item yourself before deciding to bid or pass."
+        },
+        {
+          "num": 3,
+          "title": "This-year-vs-last-year contract comparison",
+          "prompt": "Here is last year's contract/rate agreement: [PASTE OR SUMMARIZE OLD\nTERMS]\n\nHere is this year's RFP or renewal terms: [PASTE NEW TERMS]\n\nList every change: rate changes, new requirements, removed\nrequirements, changed service levels, changed penalty/chargeback\nlanguage. Flag anything that shifts risk or cost onto me that wasn't\nthere before.",
+          "note": "verification reminder \u2014 recompute any rate or penalty change by hand; don't take the tool's percentage math on faith."
+        },
+        {
+          "num": 4,
+          "title": "Cost sensitivity table builder",
+          "prompt": "My stop economics: average revenue per stop is $[X], average cost per\nstop is $[Y], broken down as: fuel $[X], labor $[X], vehicle $[X],\noverhead allocation $[X]. This RFP proposes a rate of $[PROPOSED RATE]\nper stop with estimated volume of [VOLUME] stops per month.\n\nBuild a sensitivity table showing my margin per stop and monthly profit\nat proposed volume, and at 20% below and 20% above proposed volume.\nAlso show the breakeven stop count at the proposed rate.",
+          "note": "this is arithmetic, not judgment \u2014 recompute at least one row by hand before you trust the table, per the Chapter 3 rule."
+        },
+        {
+          "num": 5,
+          "title": "Accessorial and rate-table sanity check",
+          "prompt": "Here is the accessorial and rate table from an RFP or contract:\n[PASTE TABLE]\n\nCheck the math: do line items add up the way the total implies? Are\nany accessorials priced inconsistently with each other (e.g., a\n\"long carry\" fee lower than a \"flight of stairs\" fee when my\nexperience says the reverse should be true)? List anything that looks\nlike an error or a trap.",
+          "note": "flags what to double-check by hand \u2014 this tool does not know your actual costs, only whether the numbers in front of it are internally consistent."
+        },
+        {
+          "num": 6,
+          "title": "Bid boilerplate structure draft",
+          "prompt": "I'm responding to an RFP with these requirements: [PASTE OR SUMMARIZE\nKEY REQUIREMENTS]\n\nDraft the standard sections of my bid response \u2014 company overview,\ncompliance certifications list, standard service description, standard\ninsurance/safety statement \u2014 using this information about my company:\n[PASTE YOUR BOILERPLATE FACTS: years in business, fleet size, safety\nrecord, certifications]. Keep it factual and specific, no generic\nclaims without a number behind them.",
+          "note": "this is the \"below the waterline\" work \u2014 this draft is scaffolding; you still write the three paragraphs that actually win (local knowledge, named references, specific capability) yourself."
+        },
+        {
+          "num": 7,
+          "title": "Win-the-bid paragraph sharpener",
+          "prompt": "Here's my draft paragraph making the case for why we're the right\ncarrier for this lane/region: [PASTE YOUR DRAFT]\n\nTighten it. Cut every adjective that isn't backed by a fact or number.\nFlag any sentence that could be copy-pasted into any other company's\nbid without changes \u2014 those are the sentences that lose bids.",
+          "note": "this is a red-team pass on your own writing, not a rewrite to trust blindly \u2014 keep your own voice, use the flags as a to-do list."
+        },
+        {
+          "num": 8,
+          "title": "Rate benchmarking data organizer",
+          "prompt": "Here is my own historical rate and cost data across lanes/customers:\n[PASTE OR DESCRIBE YOUR DATA]\n\nOrganize this into a table showing rate per stop, cost per stop, and\nmargin by lane/customer, sorted from highest to lowest margin. Flag\nany lane where the data looks incomplete or inconsistent.",
+          "note": "this structures what you already know \u2014 it cannot tell you the market rate for a lane it's never seen, only make your own numbers legible to you."
+        }
+      ]
+    },
+    {
+      "section": "Sales, Marketing, and Outreach",
+      "chapter": "5",
+      "prompts": [
+        {
+          "num": 9,
+          "title": "Capability one-pager draft",
+          "prompt": "Write a one-page capability summary for my company for use with\n[potential customer type, e.g., regional 3PL / retail DC / property\nmanagement company]. Facts to include: [SERVICES, FLEET SIZE, COVERAGE\nAREA, YEARS IN BUSINESS, CERTIFICATIONS, NOTABLE CUSTOMERS IF\nDISCLOSABLE]. Every claim needs a number attached \u2014 no adjectives\nwithout evidence. Keep it to one page.",
+          "note": "strip any claim you can't back up with a real number before this leaves your hands \u2014 the \"every claim gets a number\" rule is the whole point."
+        },
+        {
+          "num": 10,
+          "title": "Cold outreach research brief",
+          "prompt": "I want to find delivery/logistics decision-makers at [TYPE OF COMPANY,\ne.g., regional furniture retailers, 3PLs with last-mile programs] in\n[REGION]. Help me build a research checklist: what job titles to look\nfor, what public information (site, LinkedIn, local news) would tell\nme they're a fit, and what questions I should be able to answer about\na company before I email them.",
+          "note": "this is a research checklist, not a contact list \u2014 the tool can't browse and verify current company details for you; you still do the actual lookup."
+        },
+        {
+          "num": 11,
+          "title": "Cold email that doesn't read like a robot",
+          "prompt": "Draft a short cold email to [TITLE/ROLE] at a [TYPE OF COMPANY] I want\nto become a delivery partner for. Facts about my company: [KEY FACTS].\nWhat I know about them: [SPECIFIC DETAIL \u2014 a recent expansion, a\nfacility they run, a problem I can solve]. Keep it under 120 words,\none clear ask, no generic flattery, sound like a person who runs\ntrucks wrote it.",
+          "note": "if it doesn't mention the specific detail you gave it prominently, tell it to lead with that \u2014 generic-sounding cold email is exactly what gets deleted."
+        },
+        {
+          "num": 12,
+          "title": "Weekly content post from a job-site photo",
+          "prompt": "I took a photo today of [DESCRIBE WHAT'S IN THE PHOTO AND WHAT\nHAPPENED, e.g., \"crew navigating a tight stairwell delivery, took an\nextra 20 minutes but got it done clean\"]. Write a short, honest social\npost (LinkedIn-style, under 150 words) about this real operational\nmoment \u2014 no forced enthusiasm, no hashtag spam, just what happened and\nwhy it mattered.",
+          "note": "check it doesn't overstate the story \u2014 one honest post a week beats five inflated ones, per Chapter 5."
+        },
+        {
+          "num": 13,
+          "title": "Website \"what we do\" page draft",
+          "prompt": "Write the main services page for my company website. My services:\n[LIST]. My coverage area: [AREA]. What makes us different from a\ngeneric carrier: [YOUR ANSWER]. Write it in plain language a buyer\nskimming on their phone would understand in 20 seconds, not marketing\ncopy.",
+          "note": "read it out loud before publishing \u2014 if it sounds like every other trucking website, tell the tool what's actually different about you and try again."
+        }
+      ]
+    },
+    {
+      "section": "Customer Communication",
+      "chapter": "6",
+      "prompts": [
+        {
+          "num": 14,
+          "title": "Core message template builder",
+          "prompt": "Here are 10-15 examples of messages I've actually sent customers for\n[SCENARIO, e.g., delivery confirmations / ETA updates / reschedule\nrequests]: [PASTE EXAMPLES OR DESCRIBE THE TYPICAL SITUATION AND WHAT\nI USUALLY SAY].\n\nDraft a clean, reusable template for this scenario, with bracketed\nplaceholders for the details that change each time (date, name, item,\nreason). Keep my tone \u2014 direct and plain, not corporate.",
+          "note": "run this once per template category (aim for the 12 from Chapter 6), then hand-edit each result into your actual voice before saving it as your standard."
+        },
+        {
+          "num": 15,
+          "title": "Reschedule/exception message draft",
+          "prompt": "A delivery needs to be rescheduled because [REASON]. The customer's\noriginal appointment was [DATE/TIME]. Draft a short message explaining\nthe change, apologizing appropriately without over-apologizing, and\noffering the next available option: [OPTIONS]. Keep it under 80 words.",
+          "note": "check the reason and offered options are accurate before sending \u2014 a wrong date in a reschedule message creates a second problem on top of the first."
+        },
+        {
+          "num": 16,
+          "title": "Complaint de-escalation draft",
+          "prompt": "A customer sent this complaint: [PASTE CUSTOMER MESSAGE]\n\nHere's what actually happened, as best I know it: [YOUR VERSION OF\nEVENTS]\n\nDraft a calm, professional response that acknowledges their frustration,\nstates the facts without being defensive, and proposes a next step.\nDo not admit fault or offer compensation \u2014 flag clearly if you think\nthis situation needs those and I'll decide.",
+          "note": "this is customer-facing and Money-and-Safety-Rule territory \u2014 a human reads every word and sends it manually, always; never auto-send a complaint response."
+        },
+        {
+          "num": 17,
+          "title": "Online review response draft",
+          "prompt": "Here is a customer review: [PASTE REVIEW]\n\nDraft a public response. If it's positive, keep it short and specific\n(thank them for something concrete in their review, not generic).\nIf it's negative, stay professional, don't relitigate the complaint\npublicly, and invite them to contact us directly to resolve it.",
+          "note": "verify any specific claim the reviewer makes against your own records before your response references it \u2014 don't confirm a detail you haven't checked."
+        },
+        {
+          "num": 18,
+          "title": "FAQ auto-answer script",
+          "prompt": "Here are the 10 questions customers ask most often: [LIST QUESTIONS].\nHere are the correct answers for my business: [LIST ANSWERS].\n\nWrite short, friendly, accurate responses for each, suitable for a\nchat widget or auto-reply. Keep each answer under 40 words. Flag any\nquestion where the answer depends on order-specific details that can't\nbe automated.",
+          "note": "only deploy the flagged-safe answers to automation; anything order-specific or money-related routes to a human, per Chapter 6."
+        }
+      ]
+    },
+    {
+      "section": "Paperwork and Document Extraction",
+      "chapter": "7",
+      "prompts": [
+        {
+          "num": 19,
+          "title": "Document field extraction (BOL/POD/rate confirmation)",
+          "prompt": "Here is a photo/scan of a [BOL / POD / rate confirmation / invoice]:\n[PASTE TEXT OR DESCRIBE ATTACHED IMAGE]\n\nExtract the following into a clean list: date, reference/PO number,\norigin, destination, item description, quantity, rate/amount, and any\nsignature or exception notes. If any field is unreadable or missing,\nsay so explicitly instead of guessing.",
+          "note": "the \"say so explicitly instead of guessing\" instruction is doing the real work here \u2014 spot-check a sample of extractions against the source per the Chapter 7 protocol before you trust the pipeline."
+        },
+        {
+          "num": 20,
+          "title": "Invoice three-way match",
+          "prompt": "Here is what was contracted: [PASTE RATE/CONTRACT TERMS]\nHere is what was delivered/completed: [PASTE DELIVERY/POD DATA]\nHere is what was invoiced: [PASTE INVOICE DATA]\n\nCompare all three. List every line item where they don't match \u2014\nquantity, rate, or accessorial discrepancies \u2014 and calculate the\ndollar difference for each.",
+          "note": "recompute every flagged dollar difference by hand before you dispute or pay an invoice \u2014 this feeds a real payment decision, so it's Money-and-Safety territory."
+        },
+        {
+          "num": 21,
+          "title": "Messy notes to structured spreadsheet row",
+          "prompt": "Here are my rough notes from today's deliveries: [PASTE NOTES]\n\nTurn this into rows for a spreadsheet with these columns: Date,\nCustomer, Address, Status (Delivered/Exception/Rescheduled), Notes.\nOne row per stop.",
+          "note": "scan the output against your notes once before importing \u2014 this is high-volume, low-risk work, but a misread name or address still needs catching."
+        },
+        {
+          "num": 22,
+          "title": "Batch document summary",
+          "prompt": "Here are the contents of [NUMBER] documents: [PASTE OR LIST]\n\nSummarize each in one line: document type, key dates, key dollar\namounts, and anything that needs my attention (missing signature,\nunusual terms, expired date).",
+          "note": "use this to triage a stack fast, then open the flagged ones individually \u2014 don't treat the one-line summary as the final read on anything with a dollar amount attached."
+        }
+      ]
+    },
+    {
+      "section": "Dispatch and Ops Desk",
+      "chapter": "8",
+      "prompts": [
+        {
+          "num": 23,
+          "title": "Morning exception triage",
+          "prompt": "Here are last night's emails, texts, and voicemail transcripts:\n[PASTE OR SUMMARIZE OVERNIGHT MESSAGES]\n\nTurn this into a ranked list of today's problems: what needs a call\nin the next 30 minutes, what needs a decision today, and what can wait.\nFor each item, give me one line on what happened and who's involved.",
+          "note": "this replaces the first ten minutes of triage, not your judgment on ranking \u2014 re-order anything that doesn't match your gut on urgency; you know the customer relationships the tool doesn't."
+        },
+        {
+          "num": 24,
+          "title": "Load/cube sanity check",
+          "prompt": "Here's today's load list: [PASTE ITEMS WITH DIMENSIONS/WEIGHTS] and\ntruck capacity: [CAPACITY]. Flag anything that looks like it won't fit\nby weight or cube, and flag any sequencing issue (heavy items loaded\nin a way that blocks earlier stops).",
+          "note": "this is a second-check, not a load plan \u2014 your dispatcher's read still governs; use this to catch what got missed in a rushed morning."
+        },
+        {
+          "num": 25,
+          "title": "Coverage scramble comms draft",
+          "prompt": "[DRIVER/CREW] is out today and I need to notify affected customers.\nHere's the stop list affected: [LIST]. Draft a short notification\nmessage for each, explaining a schedule adjustment without oversharing\ninternal details, and a short internal message to whoever's covering\nwith the key details they need.",
+          "note": "verify the new schedule times are actually confirmed before these go out \u2014 don't let a draft become a promise you can't keep."
+        },
+        {
+          "num": 26,
+          "title": "Monthly exception pattern review",
+          "prompt": "Here is a list of this month's exceptions/delays/claims: [PASTE DATA:\ndate, customer, crew, product type, root cause if known]\n\nSummarize patterns: which crews, customers, product types, or stop\ntypes show up most often. Group root causes into categories. Suggest\nwhat's worth investigating further.",
+          "note": "treat the groupings as a starting hypothesis, not a verdict \u2014 small sample sizes can make noise look like a pattern; check counts before you act on any one crew or customer."
+        }
+      ]
+    },
+    {
+      "section": "Claims and Disputes",
+      "chapter": "9",
+      "prompts": [
+        {
+          "num": 27,
+          "title": "Claims packet assembly",
+          "prompt": "Here are my notes and evidence on an incident: [PASTE NOTES, PHOTOS\nDESCRIPTIONS, TIMELINE OF EVENTS]. Here is the relevant contract\nlanguage on liability/claims: [PASTE CONTRACT SECTION]\n\nAssemble a claims packet with these sections: Timeline of Events,\nEvidence List (what exists and where), Relevant Contract Citations,\nand Summary of Position. Flag any gap in evidence or timeline that\nwould weaken the packet.",
+          "note": "verify every date, dollar figure, and quoted contract clause against the source file before this packet goes anywhere \u2014 a hallucinated date in a claims letter is a lost claim, per Chapter 9."
+        },
+        {
+          "num": 28,
+          "title": "Dispute letter / denial rebuttal draft",
+          "prompt": "Here is a claim denial or dispute I received: [PASTE THE DENIAL/\nDISPUTE LETTER]. Here are the facts as I know them: [YOUR VERSION,\nWITH EVIDENCE]. Here's the relevant contract language: [PASTE]\n\nDraft a firm, professional rebuttal letter that addresses their stated\nreasons point by point and cites the contract language and evidence\nsupporting my position.",
+          "note": "this drafts the argument; you verify every citation and fact against the actual file before it goes out, and it does not go to an insurer or attorney's desk without their review first if the situation calls for it."
+        },
+        {
+          "num": 29,
+          "title": "Customer damage correspondence",
+          "prompt": "A customer's property was damaged during delivery. Here's what\nhappened: [FACTS]. Draft a message to the customer explaining next\nsteps in our claims process, professional and empathetic, without\nadmitting fault or offering a settlement amount.",
+          "note": "hard line from Chapter 9 \u2014 no admission of fault, no settlement number, ever, drafted by AI or otherwise, without your explicit sign-off and, where warranted, your insurer's."
+        },
+        {
+          "num": 30,
+          "title": "Quarterly claims pattern report",
+          "prompt": "Here is a full year (or quarter) of claims data: [PASTE: date, crew,\nproduct type, retailer/customer, root cause, dollar amount]\n\nAnalyze by crew, product type, and root cause. Show which categories\naccount for the most dollar exposure and the most frequency separately\n\u2014 they're often not the same category. Summarize in a short report I\ncan use for a team conversation.",
+          "note": "recheck the dollar totals against your own records before presenting this to anyone \u2014 it's directly feeding decisions about crews and cost."
+        }
+      ]
+    },
+    {
+      "section": "Hiring, Training, and Back Office",
+      "chapter": "10",
+      "prompts": [
+        {
+          "num": 31,
+          "title": "Job post that attracts real crew",
+          "prompt": "I need to hire a [ROLE, e.g., delivery driver / helper / dispatcher]\nfor my [TYPE OF BUSINESS]. Key requirements: [LIST]. Pay range: [RANGE].\nWhat makes working here different: [YOUR ANSWER]. Write a job post in\nplain language, no corporate-speak, that would make someone who\nactually does this work want to apply.",
+          "note": "check pay range and requirements are accurate and legally compliant for your state/city before posting \u2014 the tool doesn't know your local wage or classification rules."
+        },
+        {
+          "num": 32,
+          "title": "Screening question set",
+          "prompt": "I'm hiring a [ROLE]. The most common ways this job goes wrong are:\n[LIST FAILURE MODES, e.g., no-shows, careless handling, poor customer\nmanner]. Draft 8-10 structured interview questions that would help me\nspot these risks in a 30-minute interview, plus what a strong vs. weak\nanswer sounds like for each.",
+          "note": "have someone check the questions for anything that edges into protected-category territory (age, family status, disability) before using them \u2014 the tool drafts, you and your judgment decide who's hired, never the AI."
+        },
+        {
+          "num": 33,
+          "title": "New-hire onboarding sequence",
+          "prompt": "Here's what a new [ROLE] needs to know in their first two weeks:\n[LIST TOPICS: safety, equipment, routes, customer interaction\nstandards, paperwork]. Build a day-by-day onboarding checklist for the\nfirst two weeks, with what to cover each day and what \"ready to work\nsolo\" looks like.",
+          "note": "walk through it with an actual new hire once and adjust \u2014 a checklist built from your head always misses something obvious until it's tested."
+        },
+        {
+          "num": 34,
+          "title": "SOP from dictation",
+          "prompt": "Here's a rough voice-to-text transcript of me explaining how we handle\n[TASK, e.g., a stairwell delivery that won't fit]: [PASTE TRANSCRIPT]\n\nTurn this into a clean one-page SOP: numbered steps, a short checklist\nat the end, and a \"when to call for help\" section. Keep my terminology,\ndon't add steps I didn't describe.",
+          "note": "hand it to the newest crew member and watch where they stumble \u2014 that's your real verification step, not a read-through at your desk."
+        },
+        {
+          "num": 35,
+          "title": "Bookkeeping categorization assist",
+          "prompt": "Here is a list of transactions with descriptions and amounts:\n[PASTE TRANSACTION LIST]. Here are my standard expense categories:\n[LIST CATEGORIES]\n\nSuggest a category for each transaction and flag any that are\nambiguous or that you're not confident about.",
+          "note": "a human or your bookkeeper reviews and approves every categorization before it's final \u2014 AI assists the books, it does not close them, per Chapter 10."
+        },
+        {
+          "num": 36,
+          "title": "Monthly cash-flow narrative",
+          "prompt": "Here is this month's cash-flow summary compared to last month:\n[PASTE NUMBERS: revenue, major expense categories, ending cash\nposition]\n\nWrite a short plain-English narrative explaining what changed and\nlikely why, based on the categories that moved most. Flag anything\nthat looks like it needs a closer look.",
+          "note": "this explains movement, it doesn't audit accuracy \u2014 reconcile the underlying numbers with your bookkeeper or accountant before treating the narrative as fact."
+        },
+        {
+          "num": 37,
+          "title": "Expense summary for the accountant",
+          "prompt": "Here are this month's receipts/transactions: [PASTE OR LIST]\n\nOrganize into a summary by category with subtotals, flag anything\nthat looks miscategorized or duplicated, and format it the way my\naccountant would want to receive it: [DESCRIBE FORMAT IF KNOWN].",
+          "note": "this is a draft-everything-for-the-accountant step \u2014 your accountant still reviews and files; this just saves them (and you) the sorting time."
+        }
+      ]
+    },
+    {
+      "section": "Automation and Systems",
+      "chapter": "11",
+      "prompts": [
+        {
+          "num": 38,
+          "title": "Quote-intake extraction",
+          "prompt": "Here is an inbound quote request email: [PASTE EMAIL]\n\nExtract: customer name, contact info, origin, destination, item(s)\nand quantity, requested timeline, and any special requirements. If any\nfield is missing, list it as \"not provided\" rather than guessing.",
+          "note": "this is the first step of the Chapter 11 quote-intake automation \u2014 the draft quote it feeds into still lands in your drafts folder for a human to check and send, never auto-sent."
+        },
+        {
+          "num": 39,
+          "title": "Draft quote from extracted details",
+          "prompt": "Here are the extracted details of a quote request: [PASTE EXTRACTED\nFIELDS]. Here are my standard rate rules: [PASTE YOUR RATE LOGIC/\nRANGES]. \n\nDraft a quote response email using these rules, showing the rate\nbreakdown clearly. If the request falls outside my standard rate\nrules, flag it instead of guessing a number.",
+          "note": "recompute the quoted number yourself before it goes out \u2014 this drafts price, and price is Money-and-Safety territory, no exceptions."
+        },
+        {
+          "num": 40,
+          "title": "Automation scope brief for a freelancer",
+          "prompt": "I want to automate this workflow: [DESCRIBE THE WORKFLOW STEP BY STEP,\nTRIGGER TO OUTCOME]. Write a clear project brief for a freelancer or\nautomation builder: what triggers it, what data is involved, what the\noutput should look like, what \"done\" means, and what should never\nhappen without my review.",
+          "note": "use this brief to get comparable quotes from more than one builder \u2014 if a quote is wildly higher or promises far more than the brief describes, that's the red flag from Chapter 11."
+        },
+        {
+          "num": 41,
+          "title": "Automation break diagnosis",
+          "prompt": "This automation stopped working correctly: [DESCRIBE WHAT IT'S SUPPOSED\nTO DO AND WHAT'S GOING WRONG]. Here's a sample of the input that's\nfailing: [PASTE EXAMPLE]. What are the most likely reasons an\nautomation like this would break, given this input?",
+          "note": "this is a first-pass diagnostic to bring to whoever built or maintains the automation, not a guaranteed fix \u2014 treat it as a hypothesis list for your monthly 15-minute check."
+        }
+      ]
+    },
+    {
+      "section": "Rollout and Measurement",
+      "chapter": "12",
+      "prompts": [
+        {
+          "num": 42,
+          "title": "30-day workflow tracker setup",
+          "prompt": "I'm rolling out this AI workflow starting this week: [DESCRIBE\nWORKFLOW]. Help me design a simple tracking sheet: what to measure\n(hours saved, error rate, response time \u2014 pick what's relevant), how\noften to log it, and what a \"keep\" vs. \"kill\" threshold should look\nlike after 30 days.",
+          "note": "fill in real numbers weekly, don't skip a week because it felt fine \u2014 the whole point is a number at the end, not a feeling."
+        },
+        {
+          "num": 43,
+          "title": "Keep/kill decision summary",
+          "prompt": "Here's 30 days of data on a workflow I tested: [PASTE YOUR NUMBERS:\nhours before/after, error count, any other metric you tracked]\n\nSummarize whether this workflow is worth keeping, and why, in three\nsentences I could say out loud to my team.",
+          "note": "this organizes your own data into a decision \u2014 the decision itself, and the discipline to actually kill something that isn't working, is yours."
+        }
+      ]
+    },
+    {
+      "section": "General-Purpose Operator Prompts",
+      "chapter": "",
+      "prompts": [
+        {
+          "num": 44,
+          "title": "\"What did you assume?\" follow-up",
+          "prompt": "Before I use that, list every assumption you made in producing this\nanswer, and flag anything you weren't given that you'd normally need\nto know to get this right.",
+          "note": "run this after any prompt that touches a number, a date, or a decision \u2014 it's the single cheapest verification habit in the book (Chapter 3), and it works as a follow-up to any prompt above."
+        },
+        {
+          "num": 45,
+          "title": "Plain-English explainer",
+          "prompt": "Explain [TOPIC/DOCUMENT/CLAUSE] to me the way you'd explain it to a\nbusiness owner with no legal or technical background. No jargon. If\na term is unavoidable, define it in the same sentence.",
+          "note": "useful anywhere a contract, a piece of software documentation, or a technical explanation is slowing you down \u2014 always cross-check anything that changes a decision against the original source."
+        },
+        {
+          "num": 46,
+          "title": "Shorten-and-tighten pass",
+          "prompt": "Here's a draft I wrote: [PASTE YOUR DRAFT]\n\nCut it by [PERCENTAGE OR WORD COUNT] without losing the key facts.\nKeep my voice \u2014 don't make it sound more formal or more corporate.",
+          "note": "read the shortened version for meaning, not just length \u2014 a tightening pass occasionally drops something you needed; that's on you to catch."
+        },
+        {
+          "num": 47,
+          "title": "Meeting/call notes to action list",
+          "prompt": "Here are my rough notes from a call/meeting: [PASTE NOTES]\n\nTurn this into a short action list: what needs to happen, who owns\nit, and any deadline mentioned. Flag anything unclear that I should\nconfirm with the other party.",
+          "note": "confirm anything flagged as unclear before you act on it \u2014 don't let the tool's best guess replace an actual follow-up question."
+        },
+        {
+          "num": 48,
+          "title": "Contract clause risk scan",
+          "prompt": "Here is a contract or clause: [PASTE TEXT]\n\nIn plain English, explain what this clause requires of me, what\nhappens if I don't meet it, and flag anything that looks unusual\ncompared to standard industry terms.",
+          "note": "this is a first read, not a legal opinion \u2014 anything flagged as unusual, or any clause with real dollar exposure, goes to an actual attorney before you sign, per the Money-and-Safety Rule."
+        },
+        {
+          "num": 49,
+          "title": "Vendor/quote comparison table",
+          "prompt": "Here are quotes/proposals from [NUMBER] vendors for [WHAT YOU'RE\nBUYING]: [PASTE OR SUMMARIZE EACH]\n\nBuild a comparison table: price, what's included, what's excluded,\ntimeline, and anything that looks like a red flag (vague scope,\nunusually low price, missing details).",
+          "note": "works for anything from insurance quotes to the automation-builder scoping in Chapter 11 \u2014 verify the \"included/excluded\" column against the actual quote documents, don't take the summary as final."
+        },
+        {
+          "num": 50,
+          "title": "Daily ops digest",
+          "prompt": "Here's everything that came in today across email, texts, and any\nsystem notifications: [PASTE OR SUMMARIZE]\n\nGive me a five-line digest: what needs action today, what's FYI only,\nand what's building into a pattern worth watching (repeat customer,\nrepeat issue, repeat crew).",
+          "note": "this is the Chapter 11 daily-digest automation in prompt form \u2014 start by running it manually for a week before you wire it into an automated pipeline, so you know what \"good\" looks like."
+        }
+      ]
+    }
+  ]
+}

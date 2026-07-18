@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const platformSlugs = getAllPlatformSlugs();
 
   const staticPages = [
-    '', '/use-cases', '/tools', '/platforms', '/learning', '/blog',
+    '', '/use-cases', '/tools', '/tools/operator', '/prompts', '/platforms', '/learning', '/blog',
     '/assessment', '/roi-calculator', '/compare', '/glossary',
     '/start-here', '/inspiration', '/contact', '/advertise', '/submit',
   ];

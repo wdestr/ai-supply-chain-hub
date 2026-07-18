@@ -58,6 +58,23 @@ export default function ToolsPage() {
         <AdBanner slot="tools-top" />
       </div>
 
+      {/* Operator stack banner */}
+      <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+        <Link
+          href="/tools/operator"
+          className="flex flex-col gap-2 rounded-xl border border-amber-500/40 bg-gradient-to-r from-navy-900 to-navy-950 p-5 transition-colors hover:border-amber-400 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-amber-400">Run a small fleet, brokerage, or 3PL?</p>
+            <p className="mt-1 text-slate-300">
+              Skip the enterprise directory — see the <span className="font-semibold text-white">Operator&apos;s Tool Stack by Budget</span>:
+              three tiers ($0 / ~$100 / ~$500 a month) across six workflow categories, from <em>The AI Operator&apos;s Playbook</em>.
+            </p>
+          </div>
+          <span className="shrink-0 font-semibold text-amber-400">View the stack →</span>
+        </Link>
+      </div>
+
       {/* Filter Bar */}
       <section className="sticky top-16 z-40 border-b border-white/10 bg-navy-950/90 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">

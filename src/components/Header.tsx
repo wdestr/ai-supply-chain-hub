@@ -7,6 +7,7 @@ import { SearchButton } from './SearchModal';
 const navLinks = [
   { href: '/use-cases', label: 'Use Cases' },
   { href: '/tools', label: 'Tools' },
+  { href: '/prompts', label: 'Prompts' },
   { href: '/platforms', label: 'Platforms' },
   { href: '/learning', label: 'Learning' },
   { href: '/blog', label: 'Blog' },
