@@ -204,13 +204,16 @@ export default function PromptLibraryClient() {
 
         {/* Book plug */}
         <div className="mt-16 rounded-2xl border border-slate-800 bg-navy-900/60 p-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-amber-400">The Operator&apos;s Playbook — Book 2</p>
-          <h3 className="mt-2 text-2xl font-bold text-white">The AI Operator&apos;s Playbook</h3>
+          <p className="text-sm font-semibold uppercase tracking-wide text-amber-400">Launching soon from Wiley Strahan</p>
+          <h3 className="mt-2 text-2xl font-bold text-white">Supply Chain Careers: The Field Guide</h3>
           <p className="mx-auto mt-3 max-w-xl text-slate-400">
-            How small logistics businesses use AI to win contracts, kill paperwork, and outrun the giants — written by the guy who
-            read your bids for a living. These prompts are its appendix; the book is the system.
+            The honest map of supply chain careers — the lanes, the salaries, the first 90 days, and how AI is changing the work —
+            from fifteen-plus years inside one of the world&apos;s largest logistics operations.
           </p>
-          <p className="mt-4 text-sm text-slate-500">Available on Amazon in Kindle and paperback.</p>
+          <p className="mt-4 text-sm text-slate-500">
+            Coming to Amazon in the next few months — followed by <em>The AI Operator&apos;s Playbook</em>, the book behind this
+            prompt library. Subscribers hear first.
+          </p>
         </div>
       </div>
     </>
