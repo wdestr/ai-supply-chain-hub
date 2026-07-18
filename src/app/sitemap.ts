@@ -3,7 +3,7 @@ import { getAllArticles } from '@/data/articles';
 import { getAllToolSlugs, getAllPlatformSlugs } from '@/data/resources';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aischub.com';
+  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || '').trim() || 'https://aischub.com';
   const articles = getAllArticles();
   const toolSlugs = getAllToolSlugs();
   const platformSlugs = getAllPlatformSlugs();

@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://aischub.com'),
+  metadataBase: new URL((process.env.NEXT_PUBLIC_SITE_URL || '').trim() || 'https://aischub.com'),
   title: {
     default: "AI in Supply Chain Resource Hub",
     template: "%s | AI in Supply Chain Resource Hub",
