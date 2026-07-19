@@ -3,7 +3,9 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+// Trim guards against a stray newline/whitespace in the env var, which would
+// otherwise produce an invalid measurement ID and silently break tracking.
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 
 declare global {
   interface Window {
