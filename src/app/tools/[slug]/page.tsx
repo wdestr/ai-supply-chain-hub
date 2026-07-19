@@ -18,10 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${tool.name} for Supply Chain AI`,
     description: tool.supply_chain_relevance,
+    alternates: { canonical: `/tools/${slug}` },
     openGraph: {
       title: `${tool.name} | AI Supply Chain Tools`,
       description: tool.supply_chain_relevance,
       type: 'website',
+      url: `/tools/${slug}`,
     },
   };
 }

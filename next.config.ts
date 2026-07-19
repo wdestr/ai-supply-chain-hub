@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Canonical host: 301 www -> apex so Google indexes a single hostname
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.aischub.com' }],
+        destination: 'https://aischub.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   // Security headers
   async headers() {
     return [

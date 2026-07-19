@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getStats, useCases, platforms, generalTools, contentOutlines, nameToSlug } from '@/data/resources';
 import { getAllArticles } from '@/data/articles';
@@ -25,6 +26,34 @@ const functionColors: Record<string, string> = {
 const recentTools = generalTools.slice(-6).reverse();
 const recentPlatforms = platforms.slice(-4).reverse();
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || '').trim() || 'https://aischub.com';
+
+export const metadata: Metadata = {
+  title: 'AI in Supply Chain Resource Hub — Tools, Platforms & Guides',
+  description: 'The comprehensive resource for AI in supply chain: 470+ curated tools, platforms, use cases, and guides for demand planning, procurement, warehousing, and logistics.',
+  alternates: { canonical: '/' },
+};
+
+const homeJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: 'AISCHub — AI in Supply Chain Resource Hub',
+      url: siteUrl,
+      description: 'Curated resource hub for AI in supply chain management.',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'AI in Supply Chain Resource Hub',
+      publisher: { '@id': `${siteUrl}/#organization` },
+    },
+  ],
+};
+
 export default function HomePage() {
   const featuredUseCases = useCases.slice(0, 6);
   const featuredPlatforms = platforms.slice(0, 6);
@@ -32,6 +61,7 @@ export default function HomePage() {
 
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(homeJsonLd)}</script>
       {/* Hero */}
       <section className="relative overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900" />

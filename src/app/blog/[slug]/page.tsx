@@ -1,6 +1,7 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getArticleBySlug, getAllArticleSlugs, getAdjacentArticles, getArticleResourceTags } from '@/data/articles';
+import { getArticleBySlug, getAllArticleSlugs, getAdjacentArticles, getArticleResourceTags, getArticleDescription } from '@/data/articles';
 import { platforms, generalTools, useCases } from '@/data/resources';
 import Badge from '@/components/Badge';
 import AdBanner from '@/components/AdBanner';
@@ -18,6 +19,32 @@ const categoryColors: Record<string, 'blue' | 'green' | 'purple' | 'amber' | 'ro
 
 export function generateStaticParams() {
   return getAllArticleSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
+  if (!article) return { title: 'Article Not Found' };
+
+  const description = getArticleDescription(article);
+  const url = `/blog/${slug}`;
+
+  return {
+    title: article.title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: article.title,
+      description,
+      type: 'article',
+      url,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description,
+    },
+  };
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -44,8 +71,39 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const hasRelated = relatedPlatforms.length > 0 || relatedTools.length > 0 || relatedUseCases.length > 0;
 
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || '').trim() || 'https://aischub.com';
+  const description = getArticleDescription(article);
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        headline: article.title,
+        description,
+        articleSection: article.category,
+        url: `${siteUrl}/blog/${slug}`,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}/blog/${slug}` },
+        author: { '@type': 'Organization', name: 'AISCHub', url: siteUrl },
+        publisher: {
+          '@type': 'Organization',
+          name: 'AISCHub — AI in Supply Chain Resource Hub',
+          url: siteUrl,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+          { '@type': 'ListItem', position: 3, name: article.title, item: `${siteUrl}/blog/${slug}` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       {/* Article Hero */}
       <section className="relative overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900" />

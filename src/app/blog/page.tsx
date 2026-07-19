@@ -1,8 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { contentOutlines } from '@/data/resources';
 import Hero from '@/components/Hero';
 import Card from '@/components/Card';
 import Badge from '@/components/Badge';
+
+export const metadata: Metadata = {
+  title: 'Blog & Guides — AI in Supply Chain',
+  description: 'In-depth guides on understanding, evaluating, and implementing AI across demand planning, procurement, warehousing, and logistics.',
+  alternates: { canonical: '/blog' },
+};
 
 const categoryForArticle: Record<string, string> = {
   'ai-in-supply-chain-101': 'Fundamentals',

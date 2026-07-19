@@ -18,10 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${platform.name} — AI Supply Chain Platform`,
     description: platform.description.slice(0, 160),
+    alternates: { canonical: `/platforms/${slug}` },
     openGraph: {
       title: `${platform.name} | AI Supply Chain Platforms`,
       description: platform.description.slice(0, 160),
       type: 'website',
+      url: `/platforms/${slug}`,
     },
   };
 }

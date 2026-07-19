@@ -26,6 +26,17 @@ export function getAllArticleSlugs(): string[] {
   return allArticles.map((a) => a.slug);
 }
 
+/**
+ * Derives a plain-text meta description from an article's first section.
+ * Strips HTML tags and truncates on a word boundary to ~155 chars (SEO snippet length).
+ */
+export function getArticleDescription(article: Article): string {
+  const raw = article.sections?.[0]?.content ?? '';
+  const text = raw.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  if (text.length <= 155) return text;
+  return text.slice(0, 155).replace(/\s+\S*$/, '') + '…';
+}
+
 export function getAdjacentArticles(slug: string): { prev: Article | null; next: Article | null } {
   const index = allArticles.findIndex((a) => a.slug === slug);
   return {
