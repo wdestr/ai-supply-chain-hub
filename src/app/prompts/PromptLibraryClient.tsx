@@ -135,7 +135,7 @@ export default function PromptLibraryClient() {
     <>
       <Hero
         title="The Operator's Prompt Library"
-        subtitle={`${total} field-tested AI prompts for small logistics operators — RFP teardowns, claims packets, dispatch triage, SOPs, and the rest of the desk work. From The AI Operator's Playbook.`}
+        subtitle={`${total} field-tested AI prompts for small logistics operators — RFP teardowns, claims packets, dispatch triage, SOPs, and the rest of the desk work. From The AI Operator's Playbook — coming soon.`}
         gradient="from-amber-500 to-electric-500"
       />
 
@@ -152,7 +152,7 @@ export default function PromptLibraryClient() {
           <p className="mt-3 text-slate-400">
             These are the appendices from{' '}
             <em className="text-slate-300">The AI Operator&apos;s Playbook</em> by Wiley Strahan — Book 2 of the Operator&apos;s
-            Playbook series. The book teaches the workflows behind every prompt.{' '}
+            Playbook series, coming soon. The book will teach the workflows behind every prompt.{' '}
             <Link href="/tools/operator" className="text-electric-400 hover:text-electric-300">
               See the companion tool stack →
             </Link>

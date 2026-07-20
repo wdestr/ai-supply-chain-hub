@@ -68,7 +68,7 @@ export default function ToolsPage() {
             <p className="text-sm font-semibold uppercase tracking-wide text-amber-400">Run a small fleet, brokerage, or 3PL?</p>
             <p className="mt-1 text-slate-300">
               Skip the enterprise directory — see the <span className="font-semibold text-white">Operator&apos;s Tool Stack by Budget</span>:
-              three tiers ($0 / ~$100 / ~$500 a month) across six workflow categories, from <em>The AI Operator&apos;s Playbook</em>.
+              three tiers ($0 / ~$100 / ~$500 a month) across six workflow categories, from <em>The AI Operator&apos;s Playbook</em> (coming soon).
             </p>
           </div>
           <span className="shrink-0 font-semibold text-amber-400">View the stack →</span>

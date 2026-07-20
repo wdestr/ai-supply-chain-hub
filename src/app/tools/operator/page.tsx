@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 export const metadata: Metadata = {
   title: 'The Operator\'s Tool Stack by Budget — AI Tools for Small Logistics Businesses',
   description:
-    'The maintained AI tool stack for 1–25 truck operators, small brokers, and 3PLs — three budget tiers ($0, ~$100/mo, ~$500/mo) across six workflow categories. From The AI Operator\'s Playbook by Wiley Strahan.',
+    'The maintained AI tool stack for 1–25 truck operators, small brokers, and 3PLs — three budget tiers ($0, ~$100/mo, ~$500/mo) across six workflow categories. From The AI Operator\'s Playbook by Wiley Strahan (coming soon).',
   openGraph: {
     title: 'The Operator\'s Tool Stack by Budget',
     description: 'AI tools for small logistics operators, organized by budget tier. Maintained and free.',
@@ -66,7 +66,7 @@ export default function OperatorStackPage() {
     <>
       <Hero
         title="The Operator's Tool Stack by Budget"
-        subtitle="AI tools for 1–25 truck operators, small brokers, and 3PLs — three budget tiers across six workflow categories. This is the maintained version of Appendix B from The AI Operator's Playbook."
+        subtitle="AI tools for 1–25 truck operators, small brokers, and 3PLs — three budget tiers across six workflow categories. This is the maintained version of Appendix B from The AI Operator's Playbook — coming soon."
         gradient="from-amber-500 to-electric-500"
       />
 
